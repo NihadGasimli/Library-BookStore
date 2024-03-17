@@ -298,4 +298,4 @@ onValue(ref(db, `/bookTypes`), response => {
         document.querySelector(".bookTypeSelect").innerHTML +=
             `<option>${result[j]}</option>`
     }
-})
+});
