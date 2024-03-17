@@ -94,6 +94,7 @@ addBookBtn.addEventListener("click", async function () {
     let bookImage = document.querySelector(".bookImgUrlInp");
     let yearOfBook = document.querySelector(".yearOfBookInp");
     let bookDescription = document.querySelector(".descriptionInp");
+    let bookType = document.querySelector(".bookTypeSelect")
 
     if (bookName.value.trim() !== "" && authorName.value.trim() !== "" && bookImage.value.trim() !== "" && bookDescription.value.trim() !== "") {
         document.querySelector(".aboutBook").style.backgroundColor = "rgb(26, 198, 26)"
@@ -183,7 +184,6 @@ window.addEventListener("keyup", function () {
                 document.querySelector(".searchHistory").style.display = "flex";
                 document.querySelector(".searchHistory").innerHTML = "";
                 for (let i in response.items) {
-                    // console.log(response.items[i].volumeInfo.pageCount)
                     document.querySelector(".searchHistory").innerHTML +=
                         `<div class="historyDiv">
                     <img src="../images/clock.svg" />
@@ -211,13 +211,12 @@ window.addEventListener("keyup", function () {
                                 }
                             }
                             catch {
-                                console.log("error");
+                                    console.log("error");
                             }
 
                             try {
                                 if (response.items[i].volumeInfo.authors !== undefined) {
                                     authorName.value = response.items[i].volumeInfo.authors;
-                                    console.log(response.items[i].volumeInfo.authors)
                                 }
                             }
                             catch {
