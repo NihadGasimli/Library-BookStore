@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swiper-all,
+.swiper-besteller {
+    width: 80%;
+    height: 400px;
+    opacity: 0;
+    transition: 2s;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.bookNameSwiper {
+    color: rgb(36, 20, 0);
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 196.19%;
+    max-width: 90%;
+    overflow: hidden;
+    letter-spacing: 0%;
+    margin: 0px auto;
+}
+
+.authorNameSwiper {
+    color: rgb(36, 20, 0);
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.imageSwiper {
+    padding: 10px 10px;
+    width: 80%;
+    height: 70%;
+}
+
+.slideDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    height: 95%;
+}
+
+.slideDiv .readMoreBtn {
+    width: 80%;
+    background-color: rgb(225, 106, 0);
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+.downloadingImg {
+    position: absolute;
+    top: 100px;
+    left: 700px;
+}
+
+.categoriesDiv {
+    width: 80%;
+    display: flex;
+    background-color: red;
+    align-items: center;
+    justify-self: flex-start;
+}
+
+.categoriesDiv h1 {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.categories {
+    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 400px;
+    overflow-x: auto;
+}
+
+.categories li {
+    list-style: none;
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    cursor: pointer;
+}
+
+.categories li:hover,
+.categoriesList p:hover {
+    text-decoration: underline;
+}
+
+.allBooksSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 420px;
+    background-color: green;
+}
+
+
+.categoriesList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 271px;
+}
+
+.categoriesList p {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    cursor: pointer;
+}
+
+.moreInfo {
+    display: none;
+    opacity: 0;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 182px 0px 212px;
+    animation: fadeIn 2s ease forwards;
+}
+
+.moreInfo .leftSideMoreInfo {
+    width: 56%;
+    height: 529px;
+}
+
+.moreInfo .rightSideMoreInfo {
+    background-color: pink;
+    width: 30%;
+    height: 529px;
+}
+
+.moreInfo .bookImageMoreInfo {
+    width: 100%;
+    height: 100%;
+}
+
+.moreInfo .backBtn {
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    background-color: rgb(225, 106, 0);
+    width: 100px;
+    height: 29px;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.moreInfo .leftSideMoreInfo .infoAboutBook {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: antiquewhite;
+    padding: 10px 10px;
+    border-radius: 12px;
+    margin-bottom: 80px;
+}
+
+.moreInfo .yearOfBookMoreInfo {
+    width: 69px;
+    height: 23px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    background-color: rgb(47, 128, 237);
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.moreInfo .nameOfBookMoreInfo {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.moreInfo .authorOfBookMoreInfo {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.moreInfo .descriptionOfBookMoreInfo {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .sendCommentDiv {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .sendCommentDiv .anonimCommentInp {
+    width: 80%;
+    height: 60px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(35, 35, 35);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 23px;
+    letter-spacing: 5%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .sendCommentDiv .sendAnonimCommentBtn {
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(225, 106, 0);
+    width: 10%;
+    height: 100%;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .comments {
+    background-color: antiquewhite;
+    width: 80%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 10px;
+    display: none;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .comments .comment {
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 100px;
+    padding: 10px 20px;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .comments .comment h3 {
+    color: rgb(35, 35, 35);
+    font-family: Rubik;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+}
+
+.moreInfo .leftSideMoreInfo .anonimComment .comments .comment p {
+    color: rgb(35, 35, 35);
+    font-family: Rubik;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    overflow: auto;
+}
+
+.bestellerSection {
+    position: relative;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 420px;
+    margin-top: 128px;
+}
+
+.downloadingImgSec2 {
+    position: absolute;
+    top: 100px;
+    left: 700px;
+}
+
+.bestellerSection .bestellerHeading {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
