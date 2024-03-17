@@ -1,0 +1,1315 @@
+.adminPanel {
+    display: flex;
+    height: 100vh;
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.leftSide {
+    background-color: #720418;
+    width: 28%;
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSide .logo {
+    display: flex;
+    align-items: center;
+    column-gap: 7.98px;
+    margin: 0px 0px 8px 35px;
+    padding-top: 93.3px;
+}
+
+.leftSideImageMobile {
+    display: none;
+}
+
+.leftSide .logo .logoImage img {
+    width: 67.056px;
+    height: 105.861px;
+}
+
+.leftSide .logo .logoText {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.leftSide .logo .logoText h2 {
+    margin: 0px;
+    width: 207.553px;
+    height: 25.205px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.leftSide .logo .logoText hr {
+    margin: 0px;
+    width: 202.764px;
+    height: 1px;
+    color: rgba(255, 255, 255, 0.59);
+}
+
+.leftSide .logo .logoText p {
+    margin: 0px;
+    width: 197.974px;
+    height: 22.684px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+}
+
+.leftSide .menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.leftSide .menu ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 150px;
+}
+
+.leftSide .menu ul li a {
+    text-decoration: none;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    width: 197.97px;
+    height: 13.071px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    padding: 15px 0px;
+}
+
+.leftSide .menu .imgAndTextOfMenuItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: 70px;
+
+}
+
+.leftSide .menu .imgAndTextOfMenuItem img {
+    width: 90px;
+    height: 61px;
+    margin-top: 10px;
+}
+
+.rightSide {
+    background-color: #FFFAF5;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.rightSide .logoMobile {
+    display: none;
+}
+
+.rightSide .adminButton {
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    justify-content: flex-end;
+    margin-right: 58px;
+    margin-top: 48px;
+    cursor: pointer;
+}
+
+.rightSide .adminButton img {
+    width: 24px;
+    height: 31px;
+}
+
+.rightSide .adminButton h2 {
+    color: #241400;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    padding: 12px 0px;
+}
+
+.rightSide .addBook {
+    display: flex;
+    flex-direction: column;
+    margin: 51px 0px 0px 33px;
+    transition: ease-out .5s;
+}
+
+.rightSide .addBook h2 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .addBook .searchBook {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide .addBook .searchBook p {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .addBook .searchBook .searchBar {
+    display: flex;
+    column-gap: 7px;
+}
+
+.rightSide .addBook .searchBook .searchBar input {
+    width: 395px;
+    height: 41px;
+    border-radius: 34px;
+    border: 2px solid rgba(57, 31, 0, 0.48);
+    background-color: #fff;
+    padding: 10px 33px;
+    color: #ADADAD;
+    font-family: Preahvihear;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .addBook .searchBook .searchBar button {
+    background-color: #ff8b00;
+    border-radius: 34px;
+    padding: 12px 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 0px;
+}
+
+.rightSide .addBook .searchBook .searchBar button img {
+    width: 17px;
+    height: 23.111px;
+}
+
+.rightSide .addBook .searchBook .searchHistory {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f1f0f0;
+    width: 950px;
+    max-height: 200px;
+    border-radius: 20px;
+    margin-top: 6px;
+    padding: 20px 0px 18px 36px;
+    overflow-y: scroll;
+    overflow: auto;
+}
+
+.rightSide .addBook .searchBook .searchHistory .historyDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 24px;
+    margin-bottom: 5px;
+}
+
+.rightSide .addBook .searchBook .searchHistory .historyDiv img {
+    width: 23px;
+    height: 23px;
+}
+
+.rightSide .addBook .searchBook .searchHistory .historyDiv p {
+    height: 25px;
+    color: #BCBCBC;
+    font-family: Preahvihear;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.rightSide .addBook .searchBook .searchHistory .historyDiv p:hover {
+    text-decoration: underline;
+}
+
+.rightSide .bookForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 81px;
+    margin-left: 33px;
+    margin-bottom: 30px;
+    margin-right: 108px;
+}
+
+.rightSide .bookForm h2 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .bookForm .aboutBook {
+    display: flex;
+    flex-direction: column;
+    width: 947px;
+    height: 680px;
+    align-items: flex-start;
+    row-gap: 24px;
+    border-radius: 20px;
+    background-color: #FFF;
+    padding: 16px 30px 30px 30px;
+}
+
+.rightSide .bookForm .aboutBook .bookName {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .bookName label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .bookName input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm .aboutBook .authorName {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .authorName label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .authorName input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm .aboutBook .bookImg {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .bookImg label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .bookImg input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm .aboutBook .yearOfBook {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .yearOfBook label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .yearOfBook input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm .aboutBook .descriptionOfBook {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .descriptionOfBook label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .descriptionOfBook textarea {
+    width: 887px;
+    max-height: 100px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #fff;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm .aboutBook .bookType {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .bookForm .aboutBook .bookType label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .bookForm .aboutBook .bookType select {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #fff;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .bookForm button {
+    height: 40px;
+    width: 887px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #ff8b00;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .storeForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 81px;
+    margin-left: 33px;
+    margin-bottom: 30px;
+    margin-right: 108px;
+}
+
+.rightSide .storeForm h2 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .storeForm .aboutStore {
+    display: flex;
+    flex-direction: column;
+    width: 947px;
+    height: 415px;
+    align-items: flex-start;
+    row-gap: 24px;
+    border-radius: 20px;
+    background-color: #FFF;
+    padding: 16px 30px 30px 30px;
+}
+
+.rightSide .storeForm .aboutStore .title {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .storeForm .aboutStore .title label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .storeForm .aboutStore .title input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .storeForm .aboutStore .descriptionOfStore {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .storeForm .aboutStore .descriptionOfStore label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .storeForm .aboutStore .descriptionOfStore textarea {
+    width: 887px;
+    height: 89px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #fff;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .storeForm .aboutStore .bookImg {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .storeForm .aboutStore .bookImg label {
+    color: #030102;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .storeForm .aboutStore .bookImg input {
+    width: 887px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e6ee;
+    background-color: #FFF;
+    box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.rightSide .storeForm .aboutStore button {
+    height: 40px;
+    width: 887px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #ff8b00;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.rightSide .joinUs {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 136px;
+    margin-left: 40px;
+}
+
+.rightSide .joinUs h2 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .joinUs table {
+    background-color: #FFFAF5;
+    border: 0px;
+    max-width: 95%;
+}
+
+.rightSide .joinUs table tr {
+    background-color: #FFF;
+    text-align: center;
+    height: 48px;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset, 0px 1px 0px 0px #E6E7E9 inset;
+    padding: 8px 16px;
+}
+
+.rightSide .joinUs table .firstChildOfJoinTable td {
+    background-color: #720418;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset;
+    color: #Fff;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+    padding: 8px 16px;
+}
+
+.rightSide .joinUs table tr td {
+    color: #05111A;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+}
+
+.rightSide .joinUs table tr td:nth-child(4) {
+    overflow-x: auto;
+    padding: 0px 20px;
+}
+
+.rightSide .books {
+    width: 95%;
+    margin-top: 136px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .books h2 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .books table {
+    max-width: 95%;
+    height: 97px;
+}
+
+.rightSide .books table tr {
+    background-color: #FFF;
+    text-align: center;
+    height: 48px;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset, 0px 1px 0px 0px #E6E7E9 inset;
+    padding: 8px 16px;
+}
+
+.rightSide .books table tr td:nth-child(3) {
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+    overflow: auto;
+}
+
+.rightSide .books table .firstChildOfBooksTable td {
+    background-color: #720418;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset;
+    color: #Fff;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+    padding: 8px 19.5px;
+}
+
+.rightSide .books table tr td {
+    color: #05111A;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+}
+
+.rightSide .contactUs {
+    width: 95%;
+    margin: 298px 0px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.rightSide .contactUs h2 {
+    color: #333 font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%;
+}
+
+.rightSide .contactUs table {
+    width: 95%;
+    height: 97px;
+    margin-right: 45px;
+}
+
+.rightSide .contactUs .contactUsTable tr td {
+    background-color: #FFF;
+    text-align: center;
+    height: 48px;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset, 0px 1px 0px 0px #E6E7E9 inset;
+    padding: 8px 16px;
+}
+
+.rightSide .contactUs table .firstChildOfContactTable td {
+    background-color: #720418;
+    box-shadow: 0px -1px 0px 0px #E6E7E9 inset;
+    color: #Fff;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+    padding: 8px 0px;
+}
+
+.rightSide .contactUs table tr td {
+    color: #05111A;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: 0.14px;
+}
+
+.loginPanel {
+    background-color: #720418;
+    height: 100vh;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    padding: 10px 35px 0px 0px;
+}
+
+.logo .logoImageLogin img {
+    width: 67.056px;
+    height: 85.044px;
+    flex-shrink: 0;
+}
+
+.logo .logoTextLogin {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0px;
+    justify-content: center;
+}
+
+.logo .logoTextLogin h2 {
+    width: 208px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0px;
+    margin-bottom: 6.07px;
+}
+
+.logo .logoTextLogin hr {
+    width: 203px;
+    height: 1px;
+    color: rgba(255, 255, 255, 0.59);
+    margin: 0px;
+    margin-bottom: 4.05px;
+}
+
+.logo .logoTextLogin p {
+    width: 198px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    margin: 0px;
+}
+
+.loginPanel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 662px;
+    height: 544.31px;
+    align-self: center;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.login h1 {
+    margin-top: 69px;
+    width: 404px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.login .nameInp {
+    width: 552.937px;
+    height: 74.541px;
+    flex-shrink: 0;
+    padding: 18.03px 51.64px;
+    border: 1px solid #cecece;
+    background-color: #fff;
+    color: #797667;
+    font-family: Crimson Text;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.login .passInp {
+    width: 552.937px;
+    height: 74.541px;
+    flex-shrink: 0;
+    padding: 18.03px 54.29px;
+    border: 1px solid #cecece;
+    background-color: #fff;
+    color: #797667;
+    font-family: Crimson Text;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.login button {
+    width: 552.937px;
+    height: 74.541px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #cecece;
+    background-color: #e16a00;
+    color: #fff;
+    text-align: center;
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 84px;
+    transition: 0.2s;
+}
+
+.login button:hover {
+    color: #e16a00;
+    background-color: #fff;
+    border: 3px solid #e16a00;
+    transition: 0.2s;
+}
+
+.login .succesfulLogin {
+    background-color: rgb(26, 198, 26);
+    margin-top: 84px;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border-radius: 20px;
+}
+
+.login .succesfulLogin h4 {
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #fff;
+}
+
+.login .invalidLogin {
+    background-color: rgb(198, 26, 26);
+    margin-top: 84px;
+    width: 500px;
+    height: 100px;
+    margin: 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border-radius: 20px;
+}
+
+.login .invalidLogin h4 {
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 10px;
+}
+
+
+.rightSide .logoMobile {
+    display: none;
+    gap: 5px;
+    margin-top: 20px;
+    height: 35px;
+}
+
+.rightSide .logoMobile .logoText {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.rightSide .logoMobile .logoImage img {
+    width: 42px;
+    height: 35.70px;
+}
+
+.rightSide .logoMobile .logoText h2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: Montserrat;
+    color: rgb(114, 4, 24);
+}
+
+.rightSide .logoMobile .logoText hr {
+    margin: 0px;
+    padding: 0px;
+    width: 127px;
+    color: #000;
+}
+
+.rightSide .logoMobile .logoText p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: Montserrat;
+    color: rgb(36, 20, 0);
+}
+
+.rightSide .hamburgerMenu {
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.leftSide .closeHamburger {
+    display: none;
+}
+
+@media (max-width: 680px) {
+    .logo .logoImageLogin img {
+        width: 35.88px;
+        height: 42.15px;
+    }
+
+    .logo .logoTextLogin h2 {
+        font-size: 14px;
+    }
+
+    .logo .logoTextLogin hr {
+        width: 108.5px;
+    }
+
+    .logo .logoTextLogin p {
+        font-size: 13px;
+    }
+
+    .login {
+        width: 229.72px;
+        height: 303.93px;
+    }
+
+    .login h1 {
+        font-size: 20px;
+        margin-top: 27px;
+        width: 152px;
+    }
+
+    .login .nameInp {
+        width: 192.61px;
+        height: 40.84px;
+        font-size: 16px;
+    }
+
+    .login .passInp {
+        width: 192.61px;
+        height: 40.84px;
+        font-size: 16px;
+    }
+
+    .login button {
+        width: 193.49px;
+        height: 37.7px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .login .succesfulLogin {
+        width: 193.49px;
+        height: 37.7px;
+        margin-top: 10px;
+    }
+
+    .login .succesfulLogin h4 {
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 10px;
+        margin-top: 10px;
+    }
+
+    .login .invalidLogin {
+        width: 193.49px;
+        height: 37.7px;
+        margin-top: 10px;
+    }
+
+    .login .invalidLogin h4 {
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 10px;
+        margin-top: 10px;
+    }
+
+    .leftSide {
+        display: none;
+        position: absolute;
+        width: 247px;
+        z-index: 33;
+    }
+
+    .leftSide .menu ul li .imgAndTextOfMenuItem {
+        padding: 0;
+        margin: 0;
+        margin-left: 30px;
+    }
+
+    .leftSide .logo {
+        margin-left: 10px;
+        padding: 0px;
+    }
+
+    .leftSide .logo .logoImage img {
+        display: none;
+    }
+
+    .leftSide .logo .logoImage .leftSideImageMobile {
+        display: block;
+        width: 60px;
+    }
+
+    .leftSide .logo .logoText h2 {
+        font-size: 14px;
+    }
+
+    .leftSide .logo .logoText hr {
+        width: 127px;
+    }
+
+    .leftSide .logo .logoText p {
+        font-size: 13px;
+    }
+
+    .leftSide .logo .logoText {
+        gap: 0px;
+    }
+
+    .leftSide .logo .closeHamburger {
+        display: block;
+        color: #fff;
+        position: absolute;
+        left: 200px;
+        font-family: Montserrat;
+    }
+
+    .rightSide .adminButton {
+        display: none;
+    }
+
+    .rightSide .logoMobile {
+        margin: 3px 5px 10px 5px;
+        display: flex;
+        height: 50px;
+        padding: 0px 13px;
+        position: fixed;
+        width: 100%;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.09);
+        z-index: 2;
+        border-radius: 5px;
+    }
+
+    .rightSide .addBook {
+        margin-left: 20px;
+    }
+
+    .rightSide .addBook h2 {
+        font-size: 25px;
+    }
+
+    .rightSide .addBook .searchBook p {
+        font-size: 16px;
+        align-self: flex-start;
+    }
+
+    .rightSide .addBook .searchBook .searchBar {
+        align-self: center;
+        width: 90%;
+    }
+
+    .rightSide .addBook .searchBook .searchBar input {
+        width: 100%;
+        height: 36px;
+    }
+
+    .rightSide .addBook .searchBook .searchBar button {
+        width: 38px;
+        height: 32px;
+        text-align: center;
+        padding: 12px;
+        border-radius: 5px;
+    }
+
+    .rightSide .addBook .searchBook .searchHistory {
+        width: 254px;
+        height: 94px;
+        align-self: center;
+        border-radius: 35px;
+        margin-right: 40px;
+        width: 80%;
+    }
+
+    .rightSide .addBook .searchBook .searchHistory .historyDiv p {
+        font-size: 20px;
+    }
+
+
+    .rightSide .bookForm {
+        width: 95%;
+        margin: 47px auto;
+    }
+
+    .rightSide .bookForm h2 {
+        font-size: 16px;
+    }
+
+    .rightSide .bookForm .aboutBook,
+    .rightSide .bookForm .aboutBook .bookName,
+    .rightSide .bookForm .aboutBook .authorName,
+    .rightSide .bookForm .aboutBook .bookImg,
+    .rightSide .bookForm .aboutBook .yearOfBook,
+    .rightSide .bookForm .aboutBook .descriptionOfBook,
+    .rightSide .bookForm .aboutBook .bookType {
+        width: 100%;
+    }
+
+    .rightSide .bookForm .aboutBook .bookName input,
+    .rightSide .bookForm .aboutBook .authorName input,
+    .rightSide .bookForm .aboutBook .bookImg input,
+    .rightSide .bookForm .aboutBook .yearOfBook input,
+    .rightSide .bookForm .aboutBook .descriptionOfBook textarea,
+    .rightSide .bookForm .aboutBook .bookType select,
+    .rightSide .bookForm .aboutBook .addBookBtn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .rightSide .storeForm {
+        width: 95%;
+        margin: 0;
+        margin: 149px auto;
+    }
+
+    .rightSide .storeForm h2 {
+        font-size: 25px;
+        margin-left: 15px;
+    }
+
+    .rightSide .storeForm .aboutStore,
+    .rightSide .storeForm .aboutStore .title,
+    .rightSide .storeForm .aboutStore .bookImg,
+    .rightSide .storeForm .aboutStore .descriptionOfStore {
+        width: 100%;
+    }
+
+
+    .rightSide .storeForm .aboutStore .title input,
+    .rightSide .storeForm .aboutStore .bookImg input,
+    .rightSide .storeForm .aboutStore .descriptionOfStore textarea,
+    .rightSide .storeForm .aboutStore .aboutInfoAddBtn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .rightSide .joinUs {
+        padding: 0;
+        width: 100%;
+        margin: 117px auto;
+    }
+
+    .rightSide .joinUs table {
+        width: 95%;
+        margin: 0px auto;
+
+    }
+
+    .rightSide .joinUs h2 {
+        font-size: 25px;
+    }
+
+    .rightSide .books {
+        padding: 0;
+        width: 100%;
+        margin: 117px auto;
+    }
+
+    .rightSide .books table {
+        margin: 0px auto;
+    }
+
+    .rightSide .books h2 {
+        font-size: 25px;
+    }
+
+    .rightSide .contactUs {
+        padding: 0;
+        width: 95%;
+        margin: 117px auto;
+    }
+
+    .rightSide .contactUs h2 {
+        font-size: 25px;
+    }
+
+    .rightSide .contactUs .contactUsTable {
+        width: 100%;
+    }
+
+    .rightSide .contactUs .contactUsTable tr td {
+        padding: 0;
+        width: 100%;
+    }
+
+    .rightSide .books {
+        padding: 0;
+        width: 95%;
+        margin: 117px auto;
+    }
+
+    .rightSide .books h2 {
+        font-size: 25px;
+    }
+
+    .rightSide .books .booksTable {
+        width: 100%;
+    }
+
+    .rightSide .books .booksTable tr td {
+        padding: 0;
+        width: 100%;
+    }
+
+    .rightSide .books table tr td:nth-child(3) {
+        padding: 0;
+        margin: 0;
+        max-width: 60px;
+        overflow: auto;
+    }
+}
