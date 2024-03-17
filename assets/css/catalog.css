@@ -5,17 +5,45 @@
 }
 
 .swiper-all,
-.swiper-besteller {
+.swiper-besteller,
+.swiper-newReleases {
     width: 80%;
     height: 400px;
     opacity: 0;
     transition: 2s;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.leftArrow,
+.rightArrow,
+.leftArrowSec3,
+.rightArrowSec3 {
+    position: absolute;
+    width: 70px;
+    cursor: pointer;
+}
+
+.leftArrow,
+.leftArrowSec3 {
+    left: 80px;
+    filter: drop-shadow(-10px 1px 3px rgb(225, 106, 0));
+
+}
+
+.rightArrow,
+.rightArrowSec3 {
+    right: 80px;
+    filter: drop-shadow(10px 1px 3px rgb(225, 106, 0));
+
 }
 
 .swiper-wrapper {
     display: flex;
     justify-content: center;
     gap: 30px;
+    background-color: yellow;
 }
 
 .bookNameSwiper {
@@ -39,10 +67,38 @@
     letter-spacing: 0%;
 }
 
-.imageSwiper {
+.imageSwiperDiv {
+    position: relative;
     padding: 10px 10px;
     width: 80%;
     height: 70%;
+}
+
+.imageSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.imageSwiperDiv .newBook {
+    display: none;
+}
+
+.imageSwiperDiv .span {
+    display: block;
+    position: absolute;
+    right: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    background-color: rgb(235, 87, 87);
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 2px 5px;
 }
 
 .slideDiv {
@@ -53,7 +109,7 @@
     background-color: #fff;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
     width: 20%;
-    height: 95%;
+    height: 100%;
 }
 
 .slideDiv .readMoreBtn {
@@ -71,16 +127,9 @@
     margin-bottom: 20px;
 }
 
-.downloadingImg {
-    position: absolute;
-    top: 100px;
-    left: 700px;
-}
-
 .categoriesDiv {
     width: 80%;
     display: flex;
-    background-color: red;
     align-items: center;
     justify-self: flex-start;
 }
@@ -95,7 +144,7 @@
 }
 
 .categories {
-    gap: 20px;
+    gap: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -112,11 +161,15 @@
     line-height: 196.19%;
     letter-spacing: 0%;
     cursor: pointer;
+    transition: 0.5s;
+    padding-top: 25px;
+    padding-bottom: 20px;
 }
 
 .categories li:hover,
 .categoriesList p:hover {
     text-decoration: underline;
+    transition: 0.5s;
 }
 
 .allBooksSection {
@@ -125,8 +178,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 420px;
-    background-color: green;
+    height: 450px;
 }
 
 
@@ -145,6 +197,8 @@
     line-height: 196.19%;
     letter-spacing: 0%;
     cursor: pointer;
+    transition: 0.5s;
+    margin-right: 20px;
 }
 
 .moreInfo {
@@ -163,7 +217,6 @@
 }
 
 .moreInfo .rightSideMoreInfo {
-    background-color: pink;
     width: 30%;
     height: 529px;
 }
@@ -331,7 +384,6 @@
 
 .bestellerSection {
     position: relative;
-    background-color: pink;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,12 +391,6 @@
     width: 100%;
     height: 420px;
     margin-top: 128px;
-}
-
-.downloadingImgSec2 {
-    position: absolute;
-    top: 100px;
-    left: 700px;
 }
 
 .bestellerSection .bestellerHeading {
@@ -356,6 +402,36 @@
     letter-spacing: 0%;
 }
 
+.newReleasesSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 420px;
+    margin-top: 128px;
+    margin-bottom: 100px;
+}
+
+.newReleasesSection .newReleasesHeading {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+
+.downloadingImg,
+.downloadingImgSec2,
+.downloadingImgSec3 {
+    position: absolute;
+    top: 100px;
+    margin: 0px auto;
+}
+
 
 @keyframes fadeIn {
     from {
@@ -365,4 +441,22 @@
     to {
         opacity: 1;
     }
+}
+
+
+.categories::-webkit-scrollbar {
+    height: 6px;
+}
+
+.categories::-webkit-scrollbar-track {
+    background: #D4D4D4;
+}
+
+.categories::-webkit-scrollbar-thumb {
+    background-color: #720418;
+}
+
+.categories::-webkit-scrollbar-button{
+    background-color: #720418;
+    width: 3px;
 }
