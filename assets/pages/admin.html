@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap"
+        rel="stylesheet">
+    <script src="../js/admin.js" type="module" defer></script>
+    <script src="../js/adminLogin.js" type="module" defer></script>
+    <link href="../css/adminpanel.css" rel="stylesheet" />
+    <title>Library</title>
+</head>
+
+<body>
+    <div class="container-fluid loginPanel">
+        <div class="logo">
+            <div class="logoImageLogin">
+                <img src="../images/books-stack-of-three 2.svg" />
+            </div>
+            <div class="logoTextLogin">
+                <h2>LIBRARY</h2>
+                <hr>
+                <p>Admin Panel</p>
+            </div>
+        </div>
+        <section class="login">
+            <h1>Welcome Admin</h1>
+            <input class="nameInp" type="name" placeholder="Username" required />
+            <input class="passInp" type="password" placeholder="Password" required />
+            <button class="joinBtn">Join</button>
+            <div class="succesfulLogin">
+                <h4>Succesfully logged! Welcome</h4>
+            </div>
+
+            <div class="invalidLogin">
+                <h4>Incorrect username or password! Try again</h4>
+            </div>
+        </section>
+    </div>
+
+    <section class="adminPanel">
+        <div class="leftSide">
+            <div class="logo">
+                <div class="logoImage">
+                    <img src="../images/books-stack-of-three 2 (1).svg" />
+                    <img src="../images/Vector2.svg" class="leftSideImageMobile" />
+                </div>
+                <div class="logoText">
+                    <h2>LIBRARY</h2>
+                    <hr>
+                    <p>Admin Panel</p>
+                </div>
+                <h1 class="closeHamburger">X</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="#addBook" class="menuBtn">Home</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="#books" class="menuBtn">Books</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="#about" class="menuBtn">About</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="#join" class="menuBtn">Join us</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="#contact" class="menuBtn">Contact</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="imgAndTextOfMenuItem">
+                            <img src="../images/books-stack-of-three 2 (2).svg" />
+                            <a href="">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rightSide">
+            <div class="logoMobile">
+                <div class="logoImage">
+                    <img src="../images/Vector.svg">
+                </div>
+                <div class="logoText">
+                    <h2>LIBRARY</h2>
+                    <hr>
+                    <p>Admin Panel</p>
+                </div>
+                <img src="../images/hamburger.svg" class="hamburgerMenu" />
+            </div>
+            <div class="adminButton" id="enyuxari">
+                <img src="../images/akar-icons_heart.svg">
+                <h2 class="adminUsername">Admin</h2>
+            </div>
+            <div class="addBook" id="addBook">
+                <h2>Add book</h2>
+                <div class="searchBook">
+                    <p>Search book</p>
+                    <div class="searchBar">
+                        <input type="text" placeholder="Dan Brown" class="searchBookInp" />
+                        <button><img src="../images/Group 244.svg" /></button>
+                    </div>
+                    <div class="searchHistory">
+                        <div class="first historyDiv">
+                            <img src="../images/clock.svg" />
+                            <p>Dan Brown Davinc</p>
+                        </div>
+                        <div class="second historyDiv">
+                            <img src="../images/clock.svg" />
+                            <p>Dan Brown Angel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookForm">
+                <h2>Book form</h2>
+                <div class="aboutBook">
+                    <div class="bookName">
+                        <form action="">
+                            <label>Book Name</label>
+                            <input type="text" placeholder="Angels" class="bookNameInp" required />
+                        </form>
+                    </div>
+                    <div class="authorName">
+                        <form action="">
+                            <label>Author Name</label>
+                            <input type="text" placeholder="Dan Brown" class="authorNameInp" required />
+                        </form>
+                    </div>
+                    <div class="bookImg">
+                        <form action="">
+                            <label>Book Image Url</label>
+                            <input type="url" placeholder="https://image:url/" class="bookImgUrlInp" required />
+                        </form>
+                    </div>
+                    <div class="yearOfBook">
+                        <form action="">
+                            <label>Publication year</label>
+                            <input type="text" required class="yearOfBookInp" />
+                        </form>
+                    </div>
+                    <div class="descriptionOfBook">
+                        <form action="">
+                            <label>Description</label>
+                            <textarea class="descriptionInp" required></textarea>
+                        </form>
+                    </div>
+                    <div class="bookType">
+                        <div class="ert">
+                            <label>Book Type</label>
+                            <div class="addTypeDiv">
+                                <button class="addTypeDivBtn">+</button>
+                                <div class="addModal">
+                                    <h1>Add type</h1>
+                                    <input type="text" placeholder="Type..." class="bookTypeInp" />
+                                    <button class="addTypeBtn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <select class="bookTypeSelect">
+
+                        </select>
+                    </div>
+                    <button class="addBookBtn">Add</button>
+                </div>
+            </div>
+
+            <div class="storeForm" id="about">
+                <h2>About store</h2>
+                <div class="aboutStore">
+                    <div class="title">
+                        <label>Title</label>
+                        <input type="text" placeholder="About Store" class="aboutTitleInp" />
+                    </div>
+                    <div class="bookImg">
+                        <label>Book Image Url</label>
+                        <input type="url" placeholder="https://image:url/" class="aboutImgUrlInp" />
+                    </div>
+                    <div class="descriptionOfStore">
+                        <label>Description</label>
+                        <textarea class="aboutDescriptionInp"></textarea>
+                    </div>
+                    <button class="aboutInfoAddBtn">About Info Add</button>
+                </div>
+            </div>
+
+            <div class="joinUs" id="join">
+                <h2>Join Us</h2>
+                <table class="joinUsTable">
+
+                </table>
+            </div>
+
+            <div class="books" id="books">
+                <h2>Books</h2>
+                <table class="booksTable">
+
+                </table>
+            </div>
+
+            <div class="contactUs" id="contact">
+                <h2>Contact Us</h2>
+                <table class="contactUsTable">
+
+                </table>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
