@@ -207,38 +207,74 @@ window.addEventListener("keyup", function () {
                             yearOfBook.value = "";
                             bookDescription.value = "";
 
-                            console.log(response.items[i].volumeInfo.subtitle)
+                            try {
+                                if (response.items[i].volumeInfo.title !== undefined) {
+                                    bookName.value = response.items[i].volumeInfo.title;
+                                }
+                            }
+                            catch {
+                                console.log("error");
+                            }
 
-                            if (response.items[i].volumeInfo.title !== undefined) {
-                                bookName.value = response.items[i].volumeInfo.title;
+                            try {
+                                if (response.items[i].volumeInfo.authors !== undefined) {
+                                    authorName.value = response.items[i].volumeInfo.authors;
+                                    console.log(response.items[i].volumeInfo.authors)
+                                }
                             }
-                            if (response.items[i].volumeInfo.authors[0] !== undefined) {
-                                authorName.value = response.items[i].volumeInfo.authors[0];
+                            catch {
+                                console.log("error");
                             }
-                            if (response.items[i].volumeInfo.imageLinks.thumbnail !== undefined) {
-                                bookImage.value = response.items[i].volumeInfo.imageLinks.thumbnail;
+
+                            try {
+                                if (response.items[i].volumeInfo.imageLinks.thumbnail !== undefined) {
+                                    bookImage.value = response.items[i].volumeInfo.imageLinks.thumbnail;
+                                }
                             }
-                            if (response.items[i].volumeInfo.publishedDate !== undefined) {
-                                yearOfBook.value = response.items[i].volumeInfo.publishedDate;
+                            catch {
+                                console.log("error");
                             }
-                            if (response.items[i].volumeInfo.subtitle !== undefined) {
-                                bookDescription.value = response.items[i].volumeInfo.subtitle;
+
+                            try {
+                                if (response.items[i].volumeInfo.publishedDate !== undefined) {
+                                    yearOfBook.value = response.items[i].volumeInfo.publishedDate;
+                                }
                             }
-                            if (response.items[i].volumeInfo.categories !== undefined) {
-                                let bookTypeOption = document.querySelectorAll(".bookTypeOption");
-                                for (let j in bookTypeOption) {
-                                    if (bookTypeOption[j].value !== response.items[i].volumeInfo.categories) {
-                                        var option = document.createElement("option");
-                                        option.innerHTML = response.items[i].volumeInfo.categories;
-                                        bookType.append(option);
-                                        bookType.value = response.items[i].volumeInfo.categories;
-                                        break;
-                                    }
-                                    else {
-                                        bookType.innerHTML = response.items[i].volumeInfo.categories;
+                            catch {
+                                console.log("error");
+                            }
+
+                            try {
+
+                                if (response.items[i].volumeInfo.subtitle !== undefined) {
+                                    bookDescription.value = response.items[i].volumeInfo.subtitle;
+                                }
+                            }
+                            catch {
+                                console.log("error")
+                            }
+
+                            try {
+                                if (response.items[i].volumeInfo.categories !== undefined) {
+                                    let bookTypeOption = document.querySelectorAll(".bookTypeOption");
+                                    for (let j in bookTypeOption) {
+                                        if (bookTypeOption[j].value !== response.items[i].volumeInfo.categories) {
+                                            var option = document.createElement("option");
+                                            option.innerHTML = response.items[i].volumeInfo.categories;
+                                            bookType.append(option);
+                                            bookType.value = response.items[i].volumeInfo.categories;
+                                            break;
+                                        }
+                                        else {
+                                            bookType.innerHTML = response.items[i].volumeInfo.categories;
+                                        }
                                     }
                                 }
                             }
+                            catch {
+                                console.log("error")
+                            }
+                            
                             searchBookInp.value = "";
                             document.querySelector(".searchHistory").style.display = "none";
                         }
