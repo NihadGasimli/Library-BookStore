@@ -1310,15 +1310,21 @@
 
     .rightSide .joinUs {
         padding: 0;
-        width: 100%;
+        margin: 0;
+        width: 95%;
         margin: 117px auto;
     }
 
-    .rightSide .joinUs table {
-        width: 95%;
+    .rightSide .joinUs .joinUsTable {
+        margin: 0;
+        padding: 0;
+        width: 100%;
         margin: 0px auto;
-
     }
+    .rightSide .joinUs table tr td:nth-child(4) {
+        padding: 0;
+    }
+
 
     .rightSide .joinUs h2 {
         font-size: 25px;
