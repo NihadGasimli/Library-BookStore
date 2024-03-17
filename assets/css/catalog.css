@@ -1,0 +1,122 @@
+body {
+    background-color: rgb(255, 250, 245);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.swiper {
+    width: 80%;
+    height: 400px;
+    display: none;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.bookNameSwiper {
+    color: rgb(36, 20, 0);
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.authorNameSwiper {
+    color: rgb(36, 20, 0);
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.imageSwiper {
+    padding: 10px 10px;
+    width: 80%;
+    height: 70%;
+}
+
+.slideDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    height: 95%;
+}
+
+.slideDiv .readMoreBtn {
+    width: 80%;
+    background-color: rgb(225, 106, 0);
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+.downloadingImg {
+    position: absolute;
+    top: 300px;
+    left: 700px;
+}
+
+.categoriesDiv {
+    width: 80%;
+    display: flex;
+    background-color: red;
+    align-items: center;
+}
+
+.categoriesDiv h1 {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.categories {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 271px;
+    overflow-x: scroll;
+}
+
+.categories li {
+    list-style: none;
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    width: auto;
+}
+
+.allBooksSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: green;
+}

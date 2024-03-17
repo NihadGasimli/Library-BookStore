@@ -94,7 +94,6 @@ addBookBtn.addEventListener("click", async function () {
     let bookImage = document.querySelector(".bookImgUrlInp");
     let yearOfBook = document.querySelector(".yearOfBookInp");
     let bookDescription = document.querySelector(".descriptionInp");
-    let bookType = document.querySelector(".bookTypeInp");
 
     if (bookName.value.trim() !== "" && authorName.value.trim() !== "" && bookImage.value.trim() !== "" && bookDescription.value.trim() !== "") {
         document.querySelector(".aboutBook").style.backgroundColor = "rgb(26, 198, 26)"
@@ -199,7 +198,6 @@ window.addEventListener("keyup", function () {
                             let bookImage = document.querySelector(".bookImgUrlInp");
                             let yearOfBook = document.querySelector(".yearOfBookInp");
                             let bookDescription = document.querySelector(".descriptionInp");
-                            let bookType = document.querySelector(".bookTypeInp");
 
                             bookName.value = "";
                             authorName.value = "";
@@ -254,27 +252,6 @@ window.addEventListener("keyup", function () {
                                 console.log("error")
                             }
 
-                            try {
-                                if (response.items[i].volumeInfo.categories !== undefined) {
-                                    let bookTypeOption = document.querySelectorAll(".bookTypeOption");
-                                    for (let j in bookTypeOption) {
-                                        if (bookTypeOption[j].value !== response.items[i].volumeInfo.categories) {
-                                            var option = document.createElement("option");
-                                            option.innerHTML = response.items[i].volumeInfo.categories;
-                                            bookType.append(option);
-                                            bookType.value = response.items[i].volumeInfo.categories;
-                                            break;
-                                        }
-                                        else {
-                                            bookType.innerHTML = response.items[i].volumeInfo.categories;
-                                        }
-                                    }
-                                }
-                            }
-                            catch {
-                                console.log("error")
-                            }
-                            
                             searchBookInp.value = "";
                             document.querySelector(".searchHistory").style.display = "none";
                         }
@@ -287,3 +264,39 @@ window.addEventListener("keyup", function () {
         document.querySelector(".searchHistory").style.display = "none"
     }
 });
+
+document.addEventListener("click", function (event) {
+    const addModal = document.querySelector(".addModal");
+    if (!addModal.contains(event.target) && event.target !== document.querySelector(".addTypeDivBtn")) {
+        addModal.style.display = "none";
+    }
+});
+
+document.querySelector(".addTypeDivBtn").addEventListener("click", function () {
+    if (document.querySelector(".addModal").style.display === "flex") {
+        document.querySelector(".addModal").style.display = "none";
+    }
+    else {
+        document.querySelector(".addModal").style.display = "flex";
+    }
+})
+
+document.querySelector(".addTypeBtn").addEventListener("click", function () {
+    let bookType = document.querySelector(".bookTypeInp");
+
+    let snapshot = push(ref(db, `/bookTypes`));
+
+    set(ref(db, `/bookTypes/${snapshot.key}`), bookType.value);
+
+    bookType.value = "";
+    document.querySelector(".addModal").style.display = "none";
+});
+
+onValue(ref(db, `/bookTypes`), response => {
+    const result = response.val();
+    document.querySelector(".bookTypeSelect").innerHTML = "";
+    for (let j in result) {
+        document.querySelector(".bookTypeSelect").innerHTML +=
+            `<option>${result[j]}</option>`
+    }
+})

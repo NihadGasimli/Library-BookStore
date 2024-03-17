@@ -444,7 +444,7 @@
     box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
 }
 
-.rightSide .bookForm button {
+.rightSide .bookForm .addBookBtn {
     height: 40px;
     width: 887px;
     padding: 12px 24px;
@@ -457,6 +457,76 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.rightSide .bookForm .addTypeDiv {
+    display: flex;
+}
+
+.rightSide .bookForm .addTypeDivBtn {
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    color: green;
+    border: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.rightSide .bookForm .addTypeDivBtn:focus {
+    border: 2px solid rgba(65, 105, 225, 0.5);
+}
+
+.rightSide .bookForm .bookType .ert {
+    display: flex;
+}
+
+.rightSide .bookForm {
+    position: relative;
+}
+
+.rightSide .bookForm .bookType .addModal {
+    background-color: #e16a00;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    display: none;
+    top: 5px;
+    z-index: 555;
+    position: absolute;
+    top: 520px;
+    left: 140px;
+    width: 120px;
+}
+
+.rightSide .bookForm .bookType .addModal button {
+    width: 70%;
+    margin: 0px auto;
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.rightSide .bookForm .bookType .addModal h1 {
+    font-size: 18px;
+    margin: 0px auto;
+    color: #fff;
+}
+
+.rightSide .bookForm .bookType .addModal input {
+    width: 95%;
+    margin: 0px auto;
 }
 
 .rightSide .storeForm {

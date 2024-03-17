@@ -182,11 +182,19 @@
                         </form>
                     </div>
                     <div class="bookType">
-                        <label>Book Type</label>
-                        <select class="bookTypeInp">
-                            <option class="bookTypeOption">Fantastic</option>
-                            <option class="bookTypeOption">Bombastic</option>
-                            <option class="bookTypeOption">Dramatic</option>
+                        <div class="ert">
+                            <label>Book Type</label>
+                            <div class="addTypeDiv">
+                                <button class="addTypeDivBtn">+</button>
+                                <div class="addModal">
+                                    <h1>Add type</h1>
+                                    <input type="text" placeholder="Type..." class="bookTypeInp" />
+                                    <button class="addTypeBtn">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        <select class="bookTypeSelect">
+
                         </select>
                     </div>
                     <button class="addBookBtn">Add</button>
