@@ -84,5 +84,5 @@ document.addEventListener("click", function (e) {
         joinUsSection.style.display = "none";
         document.body.style.overflow = "auto";
         document.querySelector(".header").style.position = "fixed";
-    }
+    };
 });
