@@ -64,7 +64,7 @@ function sendJoinUsToDatabase() {
             alert("Please write fullname and email!");
         }
     });
-}
+};
 
 sendJoinUsToDatabase();
 
