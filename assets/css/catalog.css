@@ -233,6 +233,7 @@
     position: relative;
     width: 100%;
     height: 450px;
+    margin-top: 10px;
 }
 
 .categoriesList {
@@ -678,7 +679,6 @@
 
     .joinUsSection {
         width: 100%;
-        display: flex;
         flex-direction: column;
     }
 
