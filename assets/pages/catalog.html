@@ -21,74 +21,80 @@
 </head>
 
 <body>
+    <header class="header container-fluid">
+        <nav class="navbar  navbar-expand-lg  main-menu ">
+            <div class="container-fluid "> <a class="navbar-brand" href="#"> <img src="../images/Booklogo.svg" /> </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class=" header-list navbar-nav w-100 justify-content-center mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item"> <a class="nav-link" href="./index.html">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="./catalog.html">Catalog</a> </li>
+                        <li class="nav-item dropdown"> <a class="nav-link" href="./aboutStore.html"> About Store </a>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="./contact.html" aria-disabled="true">Contact
+                                Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="./search.html" aria-disabled="true">Search</a>
+                        </li>
+                    </ul>
+                    <div class="btn d-flex align-items-center joinUsBtn" data-toggle="modal"
+                        data-target="#exampleModal"> <img src="../images/joinus.svg" /> </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="joinUsSection">
+        <div class="joinUs">
+            <h1>Join Us</h1> <input type="text" placeholder="Full Name" class="nameInpJoinUs" /> <input type="email"
+                placeholder="Email" class="emailInpJoinUs" /> <textarea placeholder="Your message.."
+                class="messageInpJoinUs"></textarea> <button class="joinSubmitBtn">Join</button>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show alert-slide-in" role="alert" style="display: none;">
+            You have successfully joined! </div>
+    </section>
     <section class="allBooksSection">
         <div class="categoriesDiv">
             <h1>All books</h1>
-            <div class="categoriesList">
-                <a href="../pages/catalog.html" class="allBooksBtn">All</a>
-                <ul class="categories">
-                </ul>
+            <div class="categoriesList"> <a href="../pages/catalog.html" class="allBooksBtn">All</a>
+                <ul class="categories"> </ul>
             </div>
-        </div>
-        <img src="../images/left-chevron-svgrepo-com.svg" alt="" class="leftArrow" />
-        <img src="../images/right-arrow-svgrepo-com (1).svg" alt="" class="rightArrow" />
-        <img src="../images/downloading.gif" class="downloadingImg" />
-
+        </div> <img src="../images/left-chevron-svgrepo-com.svg" alt="" class="leftArrow" /> <img
+            src="../images/right-arrow-svgrepo-com (1).svg" alt="" class="rightArrow" /> <img
+            src="../images/downloading.gif" class="downloadingImg" />
         <div class="swiper swiper-all">
-            <div class="swiper-wrapper wrapper-all">
-            </div>
+            <div class="swiper-wrapper wrapper-all"> </div>
         </div>
-
     </section>
-
     <section class="bestellerSection">
-        <h1 class="bestellerHeading">Besteller</h1>
-
-        <img src="../images/left-chevron-svgrepo-com.svg" alt="" class="leftArrowSec2" />
-        <img src="../images/right-arrow-svgrepo-com (1).svg" alt="" class="rightArrowSec2" />
-        <img src="../images/downloading.gif" class="downloadingImgSec2" />
-
+        <h1 class="bestellerHeading">Besteller</h1> <img src="../images/left-chevron-svgrepo-com.svg" alt=""
+            class="leftArrowSec2" /> <img src="../images/right-arrow-svgrepo-com (1).svg" alt=""
+            class="rightArrowSec2" /> <img src="../images/downloading.gif" class="downloadingImgSec2" />
         <div class="swiper swiper-besteller">
-            <div class="swiper-wrapper wrapper-besteller">
-            </div>
+            <div class="swiper-wrapper wrapper-besteller"> </div>
         </div>
     </section>
-
     <section class="newReleasesSection">
-        <h1 class="newReleasesHeading">New Releases</h1>
-
-        <img src="../images/left-chevron-svgrepo-com.svg" alt="" class="leftArrowSec3" />
-        <img src="../images/right-arrow-svgrepo-com (1).svg" alt="" class="rightArrowSec3" />
-        <img src="../images/downloading.gif" class="downloadingImgSec3" />
-
+        <h1 class="newReleasesHeading">New Releases</h1> <img src="../images/left-chevron-svgrepo-com.svg" alt=""
+            class="leftArrowSec3" /> <img src="../images/right-arrow-svgrepo-com (1).svg" alt=""
+            class="rightArrowSec3" /> <img src="../images/downloading.gif" class="downloadingImgSec3" />
         <div class="swiper swiper-newReleases">
-            <div class="swiper-wrapper wrapper-newReleases">
-            </div>
+            <div class="swiper-wrapper wrapper-newReleases"> </div>
         </div>
     </section>
-
     <section class="moreInfo">
-        <div class="leftSideMoreInfo">
-            <a href="./catalog.html" class="backBtn">← back </a>
-            <div class="infoAboutBook">
-
-            </div>
+        <div class="leftSideMoreInfo"> <a href="./catalog.html" class="backBtn">← back </a>
+            <div class="infoAboutBook"> </div>
             <div class="anonimComment">
-                <div class="sendCommentDiv">
-                    <input type="text" placeholder="your anonim comment.." class="anonimCommentInp" />
-                    <button class="sendAnonimCommentBtn"><img src="../images/send.svg" /></button>
-                </div>
-                <div class="comments">
-                    <!-- <div class="comment">
-                        <h3>Anonim</h3>
-                        <p></p>
-                    </div> -->
-                </div>
+                <div class="sendCommentDiv"> <input type="text" placeholder="your anonim comment.."
+                        class="anonimCommentInp" /> <button class="sendAnonimCommentBtn"><img
+                            src="../images/send.svg" /></button> </div>
+                <div class="comments"> <!-- <div class="comment"> <h3>Anonim</h3> <p></p> </div> --> </div>
             </div>
         </div>
         <div class="rightSideMoreInfo"></div>
     </section>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 

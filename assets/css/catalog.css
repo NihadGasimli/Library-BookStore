@@ -4,6 +4,47 @@
     box-sizing: border-box;
 }
 
+.header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid whitesmoke;
+    padding-left: 214px;
+    padding-right: 64px;
+    z-index: 99;
+}
+
+.header-list {
+    width: 374px;
+    height: 24px;
+    display: flex;
+    gap: 21px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-list li a {
+    color: rgb(36, 20, 0);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.header-list li a:hover {
+    color: rgb(225, 106, 0);
+}
+
+.header-list li:nth-child(2) a {
+    color: rgb(225, 106, 0);
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.header-list li:nth-child(2) a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
 .swiper-all,
 .swiper-besteller,
 .swiper-newReleases {
@@ -32,7 +73,6 @@
 .leftArrowSec3 {
     left: 80px;
     filter: drop-shadow(-10px 1px 3px rgb(225, 106, 0));
-
 }
 
 .rightArrow,
@@ -40,15 +80,16 @@
 .rightArrowSec3 {
     right: 80px;
     filter: drop-shadow(10px 1px 3px rgb(225, 106, 0));
-
 }
 
 .swiper-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 9999px;
+}
+
+.wrapper-besteller {
+    justify-content: center;
 }
 
 .bookNameSwiper {
@@ -190,10 +231,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     width: 100%;
     height: 450px;
 }
-
 
 .categoriesList {
     display: flex;
@@ -441,7 +482,6 @@
     letter-spacing: 0%;
 }
 
-
 .downloadingImg,
 .downloadingImgSec2,
 .downloadingImgSec3 {
@@ -467,6 +507,113 @@
     width: 3px;
 }
 
+.joinUsSection {
+    position: fixed;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.alert {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border: 0px;
+    color: #Fff;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.alert-slide-in {
+    animation: slideInRight 0.5s forwards;
+}
+
+.joinUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    width: 40%;
+    width: 675px;
+    height: 500px;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    opacity: 0;
+    animation: fadeInJoin 1s ease forwards;
+}
+
+.joinUs h1 {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0%;
+}
+
+.joinUs input,
+.joinUs textarea {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    background: rgb(255, 255, 255);
+    color: rgb(121, 118, 103);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0%;
+    padding: 10px 10px;
+}
+
+.joinUs button {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    background: rgb(225, 106, 0);
+    color: rgb(255, 255, 255);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+@keyframes fadeInJoin {
+    from {
+        top: 0px;
+        opacity: 0;
+    }
+
+    to {
+        top: 101px;
+        opacity: 1;
+    }
+}
 
 @keyframes fadeIn {
     from {
@@ -479,6 +626,16 @@
 }
 
 @media (max-width:680px) {
+    .header {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 14px;
+    }
+
+    .header-list li a {
+        font-size: 11px;
+    }
+
     .categoriesDiv {
         flex-direction: column;
         margin-bottom: 20px;
@@ -518,5 +675,19 @@
         right: 0;
         top: 240px;
         width: 40px;
+    }
+
+    .joinUsSection {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .joinUs {
+        padding: 0;
+        margin: 0;
+        left: 0px;
+        width: 95%;
+        margin: 0px auto;
     }
 }
