@@ -294,6 +294,7 @@ document.addEventListener("click", function (e) {
 }); 
 
 function sendJoinUsToDatabase() { 
+    
     document.querySelector(".joinSubmitBtn").addEventListener("click", function () { 
         const successAlert = document.querySelector(".alert-success"); 
         successAlert.style.opacity = "1"; 
