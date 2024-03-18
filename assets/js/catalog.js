@@ -359,4 +359,3 @@ function addAndShowComments(key) {
     comment.value = "";
 }
 
-
