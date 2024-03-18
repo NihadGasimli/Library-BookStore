@@ -88,7 +88,7 @@ onValue(ref(db, `/joinUs`), response => {
 });
 
 
-addBookBtn.addEventListener("click", async function () {
+addBookBtn.addEventListener("click", function () {
     let bookName = document.querySelector(".bookNameInp");
     let authorName = document.querySelector(".authorNameInp");
     let bookImage = document.querySelector(".bookImgUrlInp");
