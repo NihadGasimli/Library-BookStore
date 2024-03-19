@@ -119,6 +119,7 @@ body {
     width: 90%;
     height: 20px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .authorNameSwiper {
@@ -132,6 +133,7 @@ body {
     height: 20px;
     overflow: hidden;
     text-align: center;
+    margin-top: 5px;
 }
 
 .imageSwiperDiv {
@@ -194,6 +196,7 @@ body {
     line-height: 196.19%;
     letter-spacing: 0%;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .categoriesDiv {
