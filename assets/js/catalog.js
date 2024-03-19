@@ -234,11 +234,11 @@ function clickType() {
     const swiperWrapperAll = document.querySelector(".wrapper-all");
     const typesOfBooks = document.querySelectorAll(".typeOfBook");
     typesOfBooks.forEach(btn => {
-        btn.addEventListener("click", function () {
+        btn.addEventListener("click", async function () {
+            swiperWrapperAll.innerHTML = "";
             document.querySelector(".bestellerSection").style.display = "none";
             document.querySelector(".newReleasesSection").style.display = "none";
-            swiperWrapperAll.innerHTML = "";
-            get(ref(db, `/addedBooks`)).then(response => {
+            await get(ref(db, `/addedBooks`)).then(response => {
                 const result = response.val();
                 for (let i in result) {
                     if (result[i].bookType === btn.innerHTML) {
@@ -263,6 +263,7 @@ function clickType() {
                                 <button class="readMoreBtn">READ MORE</button>
                             </div>
                         `;
+                        swiperWrapperAll.style.justifyContent = "center";
                     }
                     clickReadMore()
                 }
