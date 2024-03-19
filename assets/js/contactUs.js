@@ -1,3 +1,8 @@
+import db from "./firebase.mjs";
+
+import { get, set, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+
 document.querySelector(".joinUsBtn").addEventListener("click", function () {
     document.querySelector(".joinUsSection").style.display = "flex";
     document.querySelector(".header").style.position = "absolute";
@@ -46,3 +51,61 @@ function sendJoinUsToDatabase() {
 }
 
 sendJoinUsToDatabase();
+
+const nameContact = document.querySelector("#name-contact");
+const emailContact = document.querySelector("#email-contact");
+const addressContact = document.querySelector("#address-contact");
+const phoneContact = document.querySelector("#phone-contact");
+const noteContact = document.querySelector("#note-contact");
+const sendButton = document.querySelector(".send-btn");
+const errorAlert = document.querySelector(".error-alert");
+const successALert = document.querySelector(".success-alert");
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+sendButton.addEventListener("click", function () {
+    if (
+        !nameContact.value.trim() ||
+        !emailContact.value.trim() ||
+        !addressContact.value.trim() ||
+        !phoneContact.value.trim() ||
+        !noteContact.value.trim() ||
+        !emailPattern.test(emailContact.value)
+    ) {
+        errorAlert.style.display = "block";
+        setTimeout(() => {
+            errorAlert.style.display = "none";
+        }, 3500);
+        return;
+    }
+
+    const information = {
+        fullname: nameContact.value,
+        email: emailContact.value,
+        adress: addressContact.value,
+        phone: phoneContact.value
+    };
+
+    let snapshot = push(ref(db, `/contactUs`), information);
+    set(ref(db, `/contactUs/${snapshot.key}`), information);
+
+    successALert.style.display = "block";
+
+    setTimeout(() => {
+        successALert.style.display = "none";
+        nameContact.value = "";
+        emailContact.value = "";
+        phoneContact.value = "";
+        addressContact.value = "";
+        noteContact.value = "";
+    }, 3500);
+});
+
+document.querySelector("#phone-contact").addEventListener("change", function () {
+    let inputValue = parseInt(this.value);
+
+    if (inputValue < 0) {
+        this.value = Math.abs(inputValue);
+    }
+});
+
+
