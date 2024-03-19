@@ -1,16 +1,14 @@
 body {
     background-color: rgb(255, 250, 245);
     font-family: Montserrat;
-    line-height: 196.19%;
-    text-align: left;
 }
 
 .header {
+    position: fixed;
     width: 100%;
     height: 80px;
     background-color: rgb(255, 255, 255);
     border-bottom: 2px solid whitesmoke;
-    position: fixed;
     padding-left: 214px;
     padding-right: 64px;
     z-index: 99;
@@ -47,8 +45,6 @@ body {
 }
 
 /* ~~~~main~~~ */
-
-
 .main {
     padding-top: 140px;
     margin-bottom: 74px;
@@ -88,11 +84,9 @@ body {
     }
 }
 
-
 .alert-slide-in {
     animation: slideInRight 0.5s forwards;
 }
-
 
 .joinUs {
     display: flex;
@@ -218,7 +212,6 @@ body {
     background-color: #720418;
 }
 
-
 .image-container img {
     width: 570px;
     height: 310px;
@@ -236,7 +229,6 @@ body {
     font-weight: 900;
     font-size: 25px;
     color: rgb(36, 20, 0);
-
 }
 
 .social-container {
@@ -260,6 +252,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     color: rgb(255, 255, 255);
+    padding-bottom: 20px;
 }
 
 .information-section {
@@ -281,7 +274,6 @@ body {
     color: rgb(225, 106, 0);
     border: 1px solid rgb(225, 106, 0);
     padding: 2px 6px;
-
 }
 
 .ending {
@@ -294,12 +286,10 @@ body {
 }
 
 @media (max-width:680px) {
-
     .header {
         width: 100%;
         padding-left: 15px;
         padding-right: 14px;
-
     }
 
     .header-list li a {
@@ -309,7 +299,6 @@ body {
     .main {
         margin-bottom: 58px;
         overflow-x: hidden;
-
     }
 
     .section-1 {
@@ -324,7 +313,6 @@ body {
         text-align: center;
         padding-left: 30px;
         padding-right: 30px;
-
     }
 
     .information-container h1 {
@@ -394,5 +382,4 @@ body {
     .responsive-paragraph {
         border-top: 1px solid rgba(255, 255, 255, 0.59);
     }
-
 }
