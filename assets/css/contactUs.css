@@ -5,7 +5,13 @@
     font-family: Montserrat;
 }
 
+body {
+    background-color: rgb(255, 250, 245);
+    font-family: Montserrat;
+}
+
 .header {
+    position: fixed;
     width: 100%;
     height: 80px;
     background-color: rgb(255, 255, 255);
@@ -96,7 +102,7 @@
     left: 400px;
     top: 0px;
     opacity: 0;
-    animation: fadeInJoin 1s ease forwards;
+    animation: fadeIn 1s ease forwards;
 }
 
 .joinUs h1 {
@@ -141,7 +147,7 @@
     margin-top: 60px;
 }
 
-@keyframes fadeInJoin {
+@keyframes fadeIn {
     from {
         top: 0px;
         opacity: 0;
@@ -153,53 +159,72 @@
     }
 }
 
-.h1-contact {
-    margin-top: 121px;
-    font-family: "Montserrat";
+.contact_us {
+    margin-bottom: 85px;
+    padding: 140px 200px 0px 150px;
 }
 
-.contact {
+.contact-container {
     display: flex;
     flex-direction: column;
-    margin-left: 215px;
+    margin-top: 0px;
+    gap: 28px;
+    width: 90%;
 }
 
-.form {
-    margin-top: 36px;
+.contact-container .p-contact-us {
+    color: #333333;
+    font-family: var(--fontMons);
+    font-size: 36px;
+    font-weight: 900;
+    padding-left: 8px;
 }
 
-#name-contact,
-#email-contact,
-#address-contact,
-#phone-contact {
-    width: 610px;
-    height: 75px;
-    font-size: 23px;
-    padding-left: 38px;
-    margin-top: 30px;
-    margin-right: 20px;
+.first-form {
+    display: flex;
+    gap: 36px;
+    margin-bottom: 33px;
+}
+
+.second-form {
+    display: flex;
+    gap: 30px;
+}
+
+.first-form input,
+.second-form input {
+    width: 50%;
+    height: 70px;
+    border: 1px solid #cecece;
+    background: #fff;
+    padding: 26px 0px 24px 38px;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(110, 107, 90);
+    font-family: "Monsterrat";
+    border-radius: 5px;
+}
+
+
+#name-contact::placeholder,
+#email-contact::placeholder,
+#address-contact::placeholder,
+#phone-contact::placeholder {
+    color: rgb(121, 118, 103);
     font-family: "Crimson-text";
-    font-weight: 400;
-    border: 1px solid rgb(179, 161, 144);
-    border-radius: 4px;
-
+    font-size: 23px;
 }
 
-#note-contact {
-    width: 1246px;
-    height: 153px;
-    font-size: 23px;
-    padding-left: 38px;
-    margin-top: 30px;
-    margin-right: 20px;
-    font-family: "Crimson-text";
-    font-weight: 400;
-    border: 1px solid rgb(179, 161, 144);
-    border-radius: 4px;
+#name-contact:focus,
+#email-contact:focus,
+#address-contact:focus,
+#phone-contact:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(21, 86, 224, 0.918);
 }
 
 .error-alert {
-    width: 1246px;
+    width: 100%;
     height: 130px;
     color: #721c24;
     background-color: #f8d7da;
@@ -210,7 +235,7 @@
 }
 
 .success-alert {
-    width: 1246px;
+    width: 100%;
     height: 130px;
     color: #155724;
     background-color: #d4edda;
@@ -236,32 +261,102 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#name-contact:focus,
-#email-contact:focus,
-#address-contact:focus,
-#phone-contact:focus,
-#note-contact:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(62, 115, 230, 0.918);
-}
-
-.send-btn {
-    width: 610px;
+.button-div {
+    width: 100%;
     height: 75px;
-    font-family: "Crimson-text";
-    font-size: 30px;
-    background-color: rgb(230, 130, 37);
-    color: white;
-    border: 0;
-    margin-left: 325px;
-    margin-top: 60px;
-    border-radius: 5px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.send-btn:hover {
-    background-color: rgb(236, 117, 5);
-    cursor: pointer;
+.Send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e16a00;
+    width: 50%;
+    height: 70px;
+    border: none;
+    color: #fff;
+    font-family: "Crimson Text", serif;
+    font-size: 30px;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.Send-button:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+    font-size: 35px;
+}
+
+.section-2 {
+    margin-top: 238px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 900;
+    font-size: 25px;
+    color: rgb(36, 20, 0);
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+}
+
+.social-container img {
+    width: 80px;
+    height: 80px;
+}
+
+/* ~~~~footer~~~~ */
+.footer {
+    background-color: rgb(57, 31, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 56px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+}
+
+.information-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.inform ul li:nth-child(1) {
+    font-size: 18px;
+}
+
+.inf-4 ul li:nth-child(1) {
+    font-size: 12px;
+}
+
+.inf-4 ul li:nth-child(2) {
+    width: 136px;
+    color: rgb(225, 106, 0);
+    border: 1px solid rgb(225, 106, 0);
+    padding: 2px 6px;
+}
+
+.ending {
+    font-size: 12px;
+    text-align: center;
+}
+
+.responsive-footer {
+    display: none;
 }
 
 @media (max-width:680px) {
@@ -306,7 +401,141 @@
         padding: 0;
         margin: 0;
         left: 0px;
-        width: 95%;
+        width: 100%;
         margin: 0px auto;
     }
+
+    .contact_us{
+        padding: 0;
+        padding-top: 140px;
+    }
+
+    .first-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 30px;
+        margin-bottom: 33px;
+    }
+
+    .first-form input {
+        border-radius: 5px;
+        border: 1px solid #cecece;
+        background: #fff;
+        width: 100%;
+        height: 40px;
+    }
+
+    .first-form ::placeholder {
+        color: #241400;
+        font-family: "Crimson Text", serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .second-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .second-form input {
+        border-radius: 5px;
+        border: 1px solid #cecece;
+        background: #fff;
+        width: 100%;
+        height: 40px;
+    }
+
+    .second-form ::placeholder {
+        color: #241400;
+        font-family: "Crimson Text", serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .p-div {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .p-div p {
+        color: #241400;
+        font-family: var(--fontMons);
+        font-size: 44px;
+        font-weight: 900;
+    }
+
+    .Send-button {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        background: #e16a00;
+        font-size: 24px;
+    }
+
+    .button-div {
+        width: 100%;
+    }
+
+    .container .p-div {
+        padding-left: 0px;
+    }
+
+    .error-alert,
+    .success-alert {
+        width: 100%;
+    }
+
+    .section-2 {
+        margin-top: 130px;
+    }
+
+    .section-2 p {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    .social-container img {
+        width: 37.54px;
+        height: 37.54px;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .responsive-footer {
+        padding-top: 18px;
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        color: rgb(242, 242, 242);
+        background-color: rgb(57, 31, 0);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-footer img {
+        width: 190px;
+    }
+
+    .responsive-footer ul {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 26px;
+    }
+
+    .responsive-paragraph {
+        border-top: 1px
+    }
+
 }

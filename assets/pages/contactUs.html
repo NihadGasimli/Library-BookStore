@@ -23,81 +23,144 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="./images/logo_red.svg" />
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/contactUs.css">
     <link rel="shortcut icon" href="../images/books.svg" type="image/x-icon">
     <script src="../js/contactUs.js" type="module" defer></script>
 </head>
 
 <body>
-    <div class="obsi">
-        <header class="header container-fluid">
-            <nav class="navbar  navbar-expand-lg  main-menu ">
-                <a class="navbar-brand" href="#"> <img src="../images/Booklogo.svg" />
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class=" header-list navbar-nav w-100 justify-content-center mb-2 mb-lg-0 ms-auto">
-                        <li class="nav-item"> <a class="nav-link" href="../../index.html">Home</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="./catalog.html">Catalog</a> </li>
-                        <li class="nav-item dropdown"> <a class="nav-link" href="./aboutStore.html"> About Store
-                            </a>
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" href="./contact.html" aria-disabled="true">Contact
-                                Us</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="./search.html" aria-disabled="true">Search</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="btn d-flex align-items-center joinUsBtn" data-toggle="modal"
-                                data-target="#exampleModal"> <img src="../images/joinus.svg" />
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <section class="joinUsSection">
-            <div class="joinUs">
-                <h1>Join Us</h1> <input type="text" placeholder="Full Name" class="nameInpJoinUs" /> <input type="email"
-                    placeholder="Email" class="emailInpJoinUs" /> <textarea placeholder="Your message.."
-                    class="messageInpJoinUs"></textarea> <button class="joinSubmitBtn">Join</button>
+    <header class="header container-fluid">
+        <nav class="navbar  navbar-expand-lg  main-menu ">
+            <a class="navbar-brand" href="#"> <img src="../images/Booklogo.svg" />
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class=" header-list navbar-nav w-100 justify-content-center mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item"> <a class="nav-link" href="../../index.html">Home</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="./catalog.html">Catalog</a> </li>
+                    <li class="nav-item dropdown"> <a class="nav-link" href="./aboutStore.html"> About Store
+                        </a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="./contact.html" aria-disabled="true">Contact
+                            Us</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="./search.html" aria-disabled="true">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="btn d-flex align-items-center joinUsBtn" data-toggle="modal"
+                            data-target="#exampleModal"> <img src="../images/joinus.svg" />
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="alert alert-success alert-dismissible fade show alert-slide-in" role="alert"
-                style="display: none;">
-                You have successfully joined! </div>
-        </section>
+        </nav>
+    </header>
 
-        <main class="contact">
-            <h1 class="h1-contact">Contact Us</h1>
+    <section class="joinUsSection">
+        <div class="joinUs">
+            <h1>Join Us</h1> <input type="text" placeholder="Full Name" class="nameInpJoinUs" /> <input type="email"
+                placeholder="Email" class="emailInpJoinUs" /> <textarea placeholder="Your message.."
+                class="messageInpJoinUs"></textarea> <button class="joinSubmitBtn">Join</button>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show alert-slide-in" role="alert" style="display: none;">
+            You have successfully joined! </div>
+    </section>
+
+    <main class="contact_us">
+        <div class="contact-container mx-auto p-0">
+            <div class="p-contact-us">
+                <p>Contact Us</p>
+            </div>
             <form class="form">
-                <form class="form-1">
-                    <input type="text" placeholder="Full Name" id="name-contact">
-                    <input type="email" placeholder="Email" id="email-contact">
-                </form>
-                <form class="form-2">
-                    <input type="text" placeholder="Address" id="address-contact">
-                    <input type="number" placeholder="Phone" id="phone-contact">
-                </form>
-                <form class="form-3">
-                    <input type="text" placeholder="Note" id="note-contact">
-                </form>
-                <form class="information">
-                    <div class="error-alert">
-                        <h4 class="error-heading">Error</h4>
-                        <p class="error-p">Please check all informations</p>
-                    </div>
-                    <div class="success-alert">
-                        <h4 class="success-heading">Successful</h4>
-                        <p class="success-p">Sended your information!</p>
-                    </div>
-                </form>
+                <div class="first-form">
+                    <input type="text" id="name-contact" placeholder="Full Name" />
+                    <input type="email" id="email-contact" placeholder="Email" />
+                </div>
+
+                <div class="second-form">
+                    <input type="text" id="address-contact" placeholder="Address" />
+                    <input type="number" id="phone-contact" placeholder="Phone" />
+                </div>
+
+                <div class="third-form">
+                    <form class="information">
+                        <div class="error-alert">
+                            <h4 class="error-heading">Error</h4>
+                            <p class="error-p">Please check all informations</p>
+                        </div>
+                        <div class="success-alert">
+                            <h4 class="success-heading">Successful</h4>
+                            <p class="success-p">Sended your information!</p>
+                        </div>
+                    </form>
+                </div>
             </form>
-            <div> <button class="send-btn">Send</button></div>
-        </main>
-    </div>
+
+            <div class="button-div">
+                <button class="Send-button">Send</button>
+            </div>
+        </div>
+        <section class="section-2">
+            <p>Follow us on social media</p>
+            <div class="social-container"> <img src="../images/facebookImg.svg" /> <img
+                    src="../images/twitterImg.svg" /> <img src="../images/instagramImg.svg" /> </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="information-section">
+            <div> <img src="../images/book.png" /> </div>
+            <div class="inform">
+                <ul>
+                    <li>Popular</li>
+                    <li>Programming</li>
+                    <li>Books for children</li>
+                    <li>Psychology</li>
+                    <li>Business</li>
+                </ul>
+            </div>
+            <div class="inform">
+                <ul>
+                    <li>Information</li>
+                    <li>Delivery</li>
+                    <li>Payment</li>
+                    <li>About the store</li>
+                </ul>
+            </div>
+            <div class="inform">
+                <ul>
+                    <li>Help</li>
+                    <li>Contacts</li>
+                    <li>Purchase returns</li>
+                    <li>Buyer help</li>
+                </ul>
+            </div>
+            <div class="inform inf-4">
+                <ul>
+                    <li>+38 (071) 339-16-26</li>
+                    <li>Request a call</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ending">
+            <p>All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+        </div>
+    </footer>
+    <footer class="responsive-footer"> <img src="../images/book.png" />
+        <ul>
+            <li>Home</li>
+            <li>Catalog</li>
+            <li>About</li>
+            <li>Contact Us</li>
+            <li>Search</li>
+        </ul>
+        <p class="responsive-paragraph">Library BookStore EACamp</p>
+        <p>© 2003-2021</p>
+    </footer>
+
 </body>
 
 </html>
