@@ -359,6 +359,19 @@ body {
         margin: 0px auto;
     }
 
+    .joinUsSection {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .joinUs {
+        padding: 0;
+        margin: 0;
+        left: 0px;
+        width: 100%;
+        margin: 0px auto;
+    }
+
     .section-2 {
         margin-top: 130px;
     }
