@@ -271,6 +271,28 @@
         padding-right: 14px;
     }
 
+    .header-list {
+        background-color: #fff;
+        z-index: 999;
+        width: 100%;
+        height: 200px;
+        gap: 0px;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .joinUsBtn {
+        margin: 0;
+        padding: 0;
+        align-self: center;
+    }
+
+    .joinUsBtn img {
+        margin: 0px auto;
+        padding-right: 30px;
+    }
+
     .header-list li a {
         font-size: 11px;
     }
