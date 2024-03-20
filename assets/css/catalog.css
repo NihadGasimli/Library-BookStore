@@ -782,10 +782,6 @@ body {
         padding-bottom: 10px;
     }
 
-    .section-2 {
-        margin-top: 300px;
-    }
-
     .section-2 p {
         font-size: 18px;
         gap: 20px;
@@ -844,11 +840,10 @@ body {
         margin: 0;
         padding: 0;
         flex-direction: column-reverse;
-        padding-bottom: 100px;
         gap: 40px;
     }
-    
-    .moreInfo .anonimComment{
+
+    .moreInfo .anonimComment {
         opacity: 0;
     }
 
@@ -871,27 +866,29 @@ body {
         width: 90%;
     }
 
-    .moreInfo .leftSideMoreInfo .infoAboutBook{
+    .moreInfo .leftSideMoreInfo .infoAboutBook {
         width: 80%;
         margin: 0px auto;
     }
 
-    .moreInfo .leftSideMoreInfo .nameOfBookMoreInfo{
+    .moreInfo .leftSideMoreInfo .nameOfBookMoreInfo {
         font-size: 25px;
-        text-align:center;
+        text-align: center;
     }
 
-    .moreInfo .leftSideMoreInfo .authorOfBookMoreInfo{
+    .moreInfo .leftSideMoreInfo .authorOfBookMoreInfo {
         font-size: 12px;
         text-align: center;
     }
 
-    .moreInfo .leftSideMoreInfo .descriptionOfBookMoreInfo{
+    .moreInfo .leftSideMoreInfo .descriptionOfBookMoreInfo {
         font-size: 12px;
         text-align: justify;
+        max-height: 200px;
+        overflow-y: auto;
     }
 
-    .moreInfo .backBtn{
+    .moreInfo .backBtn {
         position: absolute;
         top: 100px;
     }
@@ -915,7 +912,6 @@ body {
         flex-direction: column;
         align-items: center;
         position: relative;
-        top: 50px;
     }
 
     .responsive-footer img {
