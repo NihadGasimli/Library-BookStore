@@ -645,6 +645,17 @@ body {
     gap: 20px;
 }
 
+.social-container {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+}
+
+.social-container img {
+    width: 80px;
+    height: 80px;
+}
+
 .footer {
     background-color: rgb(57, 31, 0);
     display: flex;
@@ -686,6 +697,8 @@ body {
 .responsive-footer {
     display: none;
 }
+
+
 
 @keyframes fadeInJoin {
     from {
@@ -801,6 +814,11 @@ body {
         left: 0px;
         width: 95%;
         margin: 0px auto;
+    }
+
+    .social-container img {
+        width: 37.54px;
+        height: 37.54px;
     }
 
     .footer {
