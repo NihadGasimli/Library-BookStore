@@ -458,6 +458,7 @@ body {
     }
     .joinUsBtn img{
         margin: 0px auto;
+        padding-right: 30px;
     }
 
     .header-list li a {
