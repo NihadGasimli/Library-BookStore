@@ -436,8 +436,28 @@ body {
 @media (max-width:680px) {
     .header {
         width: 100%;
-        padding-left: 15px;
-        padding-right: 14px;
+        padding: 0;
+        padding: 0px  15px;
+    }
+
+    .header-list{
+        background-color: #fff;
+        z-index: 999;
+        width: 100%;
+        height: 200px;
+        gap: 0px;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .joinUsBtn{
+        margin: 0;
+        padding: 0;
+        align-self: center;
+    }
+    .joinUsBtn img{
+        margin: 0px auto;
     }
 
     .header-list li a {
@@ -446,9 +466,8 @@ body {
 
     .section1 {
         flex-direction: column;
-        padding-top: 114px;
+        padding-top: 100px;
         width: 100%;
-
     }
 
     .catalogRead h1 {
@@ -483,6 +502,8 @@ body {
     .img,
     .img1 {
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .img img {
@@ -494,14 +515,13 @@ body {
     }
 
     .catalogImg {
-        margin-left: 20px;
+        padding-left: 20px;
     }
 
     .img1 img {
         width: 350px;
         height: 300px;
         position: static;
-        marg
     }
 
     .catalogChoose {
@@ -555,13 +575,13 @@ body {
     .responsive-footer {
         font-family: Montserrat;
         padding-top: 18px;
-        width: 100%;
         overflow-x: hidden;
         display: flex;
         color: rgb(242, 242, 242);
         background-color: rgb(57, 31, 0);
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .responsive-footer img {
