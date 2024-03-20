@@ -627,6 +627,24 @@ body {
     margin-top: 60px;
 }
 
+.section-2 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 900;
+    font-size: 25px;
+    color: rgb(36, 20, 0);
+    margin-bottom: 50px;
+}
+
+.section-2 p {
+    font-family: Montserrat;
+    gap: 20px;
+}
+
 .footer {
     background-color: rgb(57, 31, 0);
     display: flex;
@@ -729,6 +747,15 @@ body {
         padding-bottom: 10px;
     }
 
+    .section-2 {
+        margin-top: 130px;
+    }
+
+    .section-2 p {
+        font-size: 18px;
+        gap: 20px;
+    }
+
     .wrapper-all {
         margin-left: 100px;
         width: 100%;
@@ -736,7 +763,9 @@ body {
         margin: 0;
     }
 
-    .bookNameSwiper,.authorNameSwiper,.imageSwiper{
+    .bookNameSwiper,
+    .authorNameSwiper,
+    .imageSwiper {
         margin-top: 0;
     }
 
