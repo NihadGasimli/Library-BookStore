@@ -1,0 +1,584 @@
+body {
+    background-color: rgb(255, 250, 245);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid whitesmoke;
+    padding-left: 214px;
+    padding-right: 64px;
+    z-index: 99;
+}
+
+.header-list {
+    width: 374px;
+    height: 24px;
+    display: flex;
+    gap: 21px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-list li a {
+    font-family: Montserrat;
+    color: rgb(36, 20, 0);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.header-list li a:hover {
+    color: rgb(225, 106, 0);
+}
+
+.header-list li:nth-child(1) a {
+    color: rgb(225, 106, 0);
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.header-list li:nth-child(1) a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.catalogRead {
+    margin-top: 248.21px;
+    width: 467px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.catalogRead h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 36px;
+    color: rgb(36, 20, 0);
+}
+
+.catalogRead p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+    color: rgb(36, 20, 0);
+    width: 360px;
+    line-height: 25px;
+}
+
+.catalogRead .btnn {
+    width: 212px;
+    background-color: rgb(225, 106, 0);
+    height: 50px;
+    border: 1px solid rgb(225, 106, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: solid;
+}
+
+.section1 {
+    width: 100%;
+    height: 630px;
+    display: flex;
+    gap: 102px;
+    justify-content: center;
+}
+
+.img img {
+    margin-top: 200px;
+    top: 57px;
+    position: relative;
+    width: 562.52px;
+    height: 314.54px;
+    z-index: 3;
+    right: 40px;
+}
+
+.img1 img {
+    z-index: 1;
+    width: 640px;
+    height: 472px;
+    position: absolute;
+    top: 200px;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 66px;
+}
+
+.catalogText {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 25px;
+    margin-top: 66px;
+    margin: 0px auto;
+}
+
+.choose {
+    width: 242px;
+    height: 76px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgb(255, 255, 255);
+    width: calc(100% / 4 - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogChoose {
+    margin-top: 47px;
+    display: flex;
+    align-content: center;
+    gap: 36px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.choose {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    text-decoration: solid;
+    cursor: pointer;
+}
+
+.choose:hover {
+    text-decoration: underline;
+}
+
+.aboutStore {
+    text-align: center;
+    margin-top: 136px;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.numberOfBook {
+    display: flex;
+    margin: 0px auto;
+    column-gap: 30px;
+    gap: 30px;
+}
+
+.branches,
+.product,
+.buyers,
+.hours {
+    margin-top: 68px;
+    display: flex;
+
+}
+
+.branches h1,
+.product h1,
+.buyers h1,
+.hours h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.branches p,
+.product p,
+.buyers p,
+.hours p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.branches p {
+    margin-left: 27px;
+    display: flex;
+    align-items: center;
+}
+
+.product p {
+    margin-left: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.buyers p {
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.hours p {
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.section4 {
+    margin-top: 159px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery {
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}
+
+.aboutDelivery {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 42px;
+    text-align: center;
+    line-height: 196.19%;
+}
+
+.joinUsSection {
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.alert {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border: 0px;
+    color: #Fff;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.alert-slide-in {
+    animation: slideInRight 0.5s forwards;
+}
+
+.joinUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    width: 40%;
+    width: 675px;
+    height: 500px;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.joinUs h1 {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0%;
+}
+
+.joinUs input,
+.joinUs textarea {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    background: rgb(255, 255, 255);
+    color: rgb(121, 118, 103);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0%;
+    padding: 10px 10px;
+}
+
+.joinUs button {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    background: rgb(225, 106, 0);
+    color: rgb(255, 255, 255);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.section-2 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 900;
+    font-size: 25px;
+    color: rgb(36, 20, 0);
+    margin-bottom: 50px;
+}
+
+.section-2 p {
+    font-family: Montserrat;
+    gap: 20px;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+}
+
+.social-container img {
+    width: 80px;
+    height: 80px;
+}
+
+@keyframes fadeIn {
+    from {
+        top: 0px;
+        opacity: 0;
+    }
+
+    to {
+        top: 101px;
+        opacity: 1;
+    }
+}
+
+.footer {
+    background-color: rgb(57, 31, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 56px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    font-family: Montserrat;
+}
+
+.information-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.inform ul li:nth-child(1) {
+    font-size: 18px;
+}
+
+.inf-4 ul li:nth-child(1) {
+    font-size: 12px;
+}
+
+.inf-4 ul li:nth-child(2) {
+    width: 136px;
+    color: rgb(225, 106, 0);
+    border: 1px solid rgb(225, 106, 0);
+    padding: 2px 6px;
+}
+
+.ending {
+    font-size: 12px;
+    text-align: center;
+}
+
+.responsive-footer {
+    display: none;
+}
+
+@media (max-width:680px) {
+    .header {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 14px;
+    }
+
+    .header-list li a {
+        font-size: 11px;
+    }
+
+    .section1 {
+        flex-direction: column;
+        padding-top: 114px;
+        width: 100%;
+
+    }
+
+    .catalogRead h1 {
+        font-size: 32px;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .catalogRead p {
+        font-size: 13px;
+        width: 90%;
+        margin: 0px auto;
+        color: rgb(36, 20, 0);
+    }
+
+    .catalogRead {
+        margin-top: 130px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .catalogImg {
+        width: 100%;
+    }
+
+    .joinUs {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .img,
+    .img1 {
+        width: 100%;
+    }
+
+    .img img {
+        width: 320px;
+        height: 200px;
+        position: absolute;
+        top: 250px;
+        left: 0px;
+    }
+
+    .catalogImg {
+        margin-left: 20px;
+    }
+
+    .img1 img {
+        width: 350px;
+        height: 300px;
+        position: static;
+        marg
+    }
+
+    .catalogChoose {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .section3 {
+        flex-direction: column;
+
+    }
+
+    .numberOfBook {
+        flex-direction: column;
+    }
+
+    .choose {
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .catalogRead .btnn {
+        margin-top: 39px;
+        margin: 0px auto;
+        width: 90%;
+    }
+
+    .catalogText {
+        margin-top: 132px;
+    }
+
+    .section-2 {
+        margin-top: 130px;
+    }
+
+    .section-2 p {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    .social-container img {
+        width: 37.54px;
+        height: 37.54px;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .responsive-footer {
+        font-family: Montserrat;
+        padding-top: 18px;
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        color: rgb(242, 242, 242);
+        background-color: rgb(57, 31, 0);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-footer img {
+        width: 190px;
+    }
+
+    .responsive-footer ul {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 26px;
+    }
+
+    .responsive-paragraph {
+        border-top: 1px solid rgba(255, 255, 255, 0.59);
+    }
+
+}
