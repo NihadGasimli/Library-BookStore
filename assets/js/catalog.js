@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".downloadingImg").style.display = "none";
         document.querySelector(".downloadingImgSec2").style.display = "none";
         document.querySelector(".downloadingImgSec3").style.display = "none";
-    }
+    };
 
     setTimeout(downloading, 2000);
 
