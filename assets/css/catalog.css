@@ -378,6 +378,7 @@ body {
     line-height: 196.19%;
     letter-spacing: 0%;
     text-align: left;
+    max-height: 200px;
 }
 
 .moreInfo .leftSideMoreInfo .anonimComment {
@@ -628,7 +629,7 @@ body {
 }
 
 .section-2 {
-    margin-top: 100px;
+    margin-top: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -662,10 +663,11 @@ body {
     flex-direction: column;
     gap: 50px;
     padding-top: 56px;
+    padding-bottom: 20px;
     font-size: 14px;
     font-weight: 400;
     color: rgb(255, 255, 255);
-    padding-bottom: 20px;
+    position: relative;
 }
 
 .information-section {
@@ -843,8 +845,10 @@ body {
         gap: 40px;
     }
 
-    .moreInfo .anonimComment {
-        opacity: 0;
+    .moreInfo .leftSideMoreInfo .anonimComment {
+        padding: 0;
+        margin: 0;
+        display: none;
     }
 
     .moreInfo .rightSideMoreInfo {
@@ -864,6 +868,7 @@ body {
 
     .moreInfo .leftSideMoreInfo {
         width: 90%;
+        height: auto;
     }
 
     .moreInfo .leftSideMoreInfo .infoAboutBook {
@@ -884,7 +889,7 @@ body {
     .moreInfo .leftSideMoreInfo .descriptionOfBookMoreInfo {
         font-size: 12px;
         text-align: justify;
-        max-height: 200px;
+        max-height: 400px;
         overflow-y: auto;
     }
 
@@ -903,7 +908,7 @@ body {
     }
 
     .responsive-footer {
-        padding-top: 18px;
+        padding-top: 20px;
         width: 100%;
         overflow-x: hidden;
         display: flex;
@@ -911,7 +916,6 @@ body {
         background-color: rgb(57, 31, 0);
         flex-direction: column;
         align-items: center;
-        position: relative;
     }
 
     .responsive-footer img {
