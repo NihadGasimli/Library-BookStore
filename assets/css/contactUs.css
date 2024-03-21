@@ -323,6 +323,7 @@ body {
     flex-direction: column;
     gap: 50px;
     padding-top: 56px;
+    padding-bottom: 20px;
     font-size: 14px;
     font-weight: 400;
     color: rgb(255, 255, 255);
@@ -512,6 +513,7 @@ body {
 
     .responsive-footer {
         padding-top: 18px;
+        padding-bottom: 20px;
         width: 100%;
         overflow-x: hidden;
         display: flex;
