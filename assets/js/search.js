@@ -34,7 +34,7 @@ function callSwiper() {
         },
         observer: true,
         observeParents: true,
-        watchSlidesProgress: true
+        watchSlidesProgress: true,
     });
 
 
