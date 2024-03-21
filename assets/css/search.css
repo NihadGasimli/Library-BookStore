@@ -1,0 +1,424 @@
+body {
+    background-color: rgb(255, 250, 245);
+    font-family: Montserrat;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid whitesmoke;
+    padding-left: 214px;
+    padding-right: 64px;
+    z-index: 99;
+}
+
+.header-list {
+    width: 374px;
+    height: 24px;
+    display: flex;
+    gap: 21px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-list li a {
+    color: rgb(36, 20, 0);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.header-list li a:hover {
+    color: rgb(225, 106, 0);
+}
+
+.header-list li:nth-child(5) a {
+    color: rgb(225, 106, 0);
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+.header-list li:nth-child(5) a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.main {
+    padding-top: 140px;
+    margin-bottom: 74px;
+    /* background-color: red; */
+    margin: 0px 200px;
+}
+
+.main .searchSection .leftSideSearchSection {
+    width: 40%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.main .searchSection .leftSideSearchSection h1 {
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.main .searchSection .leftSideSearchSection .searchBtn {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgb(225, 106, 0);
+    color: rgb(255, 255, 255);
+    font-family: Crimson Text;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: 0%;
+    text-align: center;
+    border: 0;
+}
+
+.main .searchSection .leftSideSearchSection .inputDiv {
+    background-color: green;
+    display: flex;
+    align-items: center;
+}
+
+.main .searchSection .leftSideSearchSection .inputDiv .searchInpImage {
+    position: absolute;
+    z-index: 3;
+    width: 25px;
+    margin-left: 10px;
+}
+
+.main .searchSection .leftSideSearchSection .inputDiv .searchBookInp {
+    position: relative;
+    padding-left: 50px;
+    width: 100%;
+    height: 50px;
+    color: rgb(36, 20, 0);
+    font-family: Crimson Text;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.searchBookInp:focus {
+    border: 0;
+    outline: none;
+    box-shadow: 0 0 10px rgba(21, 86, 224, 0.918);
+    transition: 0.2s;
+}
+
+.joinUsSection {
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.alert {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    border: 0px;
+    color: #Fff;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.alert-slide-in {
+    animation: slideInRight 0.5s forwards;
+}
+
+.joinUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    width: 40%;
+    width: 675px;
+    height: 500px;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 400px;
+    top: 0px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.joinUs h1 {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0%;
+}
+
+.joinUs input,
+.joinUs textarea {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    background: rgb(255, 255, 255);
+    color: rgb(121, 118, 103);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0%;
+    padding: 10px 10px;
+}
+
+.joinUs button {
+    width: 80%;
+    height: 12%;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 5px;
+    background: rgb(225, 106, 0);
+    color: rgb(255, 255, 255);
+    font-family: Crimson Text;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+@keyframes fadeIn {
+    from {
+        top: 0px;
+        opacity: 0;
+    }
+
+    to {
+        top: 101px;
+        opacity: 1;
+    }
+}
+
+.section-2 {
+    margin-top: 238px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 900;
+    font-size: 25px;
+    color: rgb(36, 20, 0);
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    gap: 54px;
+}
+
+.social-container img {
+    width: 80px;
+    height: 80px;
+}
+
+/* ~~~~footer~~~~ */
+.footer {
+    background-color: rgb(57, 31, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 56px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+}
+
+.information-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.inform ul li:nth-child(1) {
+    font-size: 18px;
+}
+
+.inf-4 ul li:nth-child(1) {
+    font-size: 12px;
+}
+
+.inf-4 ul li:nth-child(2) {
+    width: 136px;
+    color: rgb(225, 106, 0);
+    border: 1px solid rgb(225, 106, 0);
+    padding: 2px 6px;
+}
+
+.ending {
+    font-size: 12px;
+    text-align: center;
+}
+
+.responsive-footer {
+    display: none;
+}
+
+
+@media (max-width:680px) {
+    .header {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 14px;
+    }
+
+    .header-list {
+        background-color: #fff;
+        z-index: 999;
+        width: 100%;
+        height: 200px;
+        gap: 0px;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .joinUsBtn {
+        margin: 0;
+        padding: 0;
+        align-self: center;
+    }
+
+    .joinUsBtn img {
+        margin: 0px auto;
+        padding-right: 30px;
+    }
+
+    .header-list li a {
+        font-size: 11px;
+    }
+
+    .section-1 {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .information-container {
+        order: 2;
+        width: 100%;
+        height: 400px;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .information-container h1 {
+        font-size: 24px;
+    }
+
+    .information-container p {
+        font-size: 14px;
+    }
+
+    .image-container {
+        order: 1;
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+    }
+
+    .image-container img {
+        width: 350px;
+        height: 200px;
+        padding: 0;
+        margin: 0px auto;
+    }
+
+    .joinUsSection {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .joinUs {
+        padding: 0;
+        margin: 0;
+        left: 0px;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .section-2 {
+        margin-top: 130px;
+    }
+
+    .section-2 p {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    .social-container img {
+        width: 37.54px;
+        height: 37.54px;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .responsive-footer {
+        padding-top: 18px;
+        padding-bottom: 20px;
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        color: rgb(242, 242, 242);
+        background-color: rgb(57, 31, 0);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .responsive-footer img {
+        width: 190px;
+    }
+
+    .responsive-footer ul {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 26px;
+    }
+
+    .responsive-paragraph {
+        border-top: 1px solid rgba(255, 255, 255, 0.59);
+    }
+}
