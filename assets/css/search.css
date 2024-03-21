@@ -51,11 +51,18 @@ body {
     margin: 0px 200px;
 }
 
+.main .searchSection {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
 .main .searchSection .leftSideSearchSection {
     width: 40%;
     display: flex;
     gap: 20px;
     flex-direction: column;
+    background-color: green;
 }
 
 .main .searchSection .leftSideSearchSection h1 {
@@ -71,7 +78,7 @@ body {
     width: 100%;
     height: 50px;
     border-radius: 5px;
-    background-color: rgb(225, 106, 0);
+    background-color: #FF8B00;
     color: rgb(255, 255, 255);
     font-family: Crimson Text;
     font-size: 30px;
@@ -80,7 +87,14 @@ body {
     letter-spacing: 0%;
     text-align: center;
     border: 0;
+    transition: 0.5s;
 }
+
+.main .searchSection .leftSideSearchSection .searchBtn:hover {
+    background-color: #DD7B00;
+    transition: 0.5s;
+}
+
 
 .main .searchSection .leftSideSearchSection .inputDiv {
     background-color: green;
@@ -110,11 +124,89 @@ body {
     transition: 0.2s;
 }
 
-.searchBookInp:focus {
+.main .searchSection .leftSideSearchSection .inputDiv .searchBookInp:focus {
     border: 0;
     outline: none;
     box-shadow: 0 0 10px rgba(21, 86, 224, 0.918);
     transition: 0.2s;
+}
+
+.main .searchSection .rightSideSearchSection {
+    width: 70%;
+    position: relative;
+    background-color: yellow;
+    overflow: hidden;
+}
+
+.swiper-search {
+    width: 700px;
+    height: 400px;
+    opacity: 1;
+    transition: 2s;
+    padding: 0;
+    margin: 0;
+    background-color: red;
+}
+
+.wrapper-search {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.slideDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 98%;
+}
+
+.imageSwiperDiv .newBook {
+    display: none;
+}
+
+.imageSwiperDiv .span {
+    display: block;
+    position: absolute;
+    right: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    background-color: rgb(235, 87, 87);
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    z-index: 99;
+}
+
+.leftArrow,
+.rightArrow {
+    position: absolute;
+    width: 70px;
+    cursor: pointer;
+}
+
+.leftArrow {
+    left: 0;
+    top: 150px;
+    filter: drop-shadow(-10px 1px 3px rgb(225, 106, 0));
+}
+
+.rightArrow {
+    right: 0;
+    top: 150px;
+    filter: drop-shadow(10px 1px 3px rgb(225, 106, 0));
 }
 
 .joinUsSection {
@@ -227,6 +319,7 @@ body {
 
 .section-2 {
     margin-top: 238px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
