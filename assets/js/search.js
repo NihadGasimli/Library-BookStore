@@ -87,6 +87,9 @@ searchBtn.addEventListener("click", function () {
         const result = response.val();
         for (let i in result) {
             if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
+                document.querySelector(".bookNotFound").style.display = "none";
+                document.querySelector(".leftArrow").style.display = "block";
+                document.querySelector(".rightArrow").style.display = "block";
                 bookName = result[i].bookName;
                 authorName = result[i].authorName;
                 description = result[i].bookDescription;
@@ -98,7 +101,6 @@ searchBtn.addEventListener("click", function () {
                 document.querySelector(".wrapper-search").innerHTML +=
                     `<div class="swiper-slide slideDiv">
                 <div class="imageSwiperDiv">
-                    <span class=${imageClass}>New</span>
                     <img src="${result[i].bookImage}" class="imageSwiper" />
                 </div>
                     <div class="infoBookDiv">
@@ -107,6 +109,11 @@ searchBtn.addEventListener("click", function () {
                 <p class="descriptionSwiper">${description}</p>
                     </div>
                 </div>`;
+            }
+            else {
+                document.querySelector(".leftArrow").style.display = "none";
+                document.querySelector(".rightArrow").style.display = "none";
+                document.querySelector(".bookNotFound").style.display = "block";
             }
         }
     })
