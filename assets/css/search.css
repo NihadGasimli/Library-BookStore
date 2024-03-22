@@ -47,7 +47,6 @@ body {
 .main {
     padding-top: 140px;
     margin-bottom: 74px;
-    /* background-color: red; */
     margin: 0px 200px;
 }
 
@@ -185,10 +184,6 @@ body {
     width: 100%;
 }
 
-.imageSwiperDiv .newBook {
-    display: none;
-}
-
 .infoBookDiv .bookNameSwiper {
     margin-top: 60px;
     width: 80%;
@@ -224,30 +219,13 @@ body {
     letter-spacing: 0%;
 }
 
-.imageSwiperDiv .span {
-    display: block;
-    position: absolute;
-    border-radius: 3px;
-    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
-    background-color: rgb(235, 87, 87);
-    color: rgb(255, 255, 255);
-    font-family: Montserrat;
-    font-size: 9px;
-    font-weight: 900;
-    line-height: 196.19%;
-    letter-spacing: 0%;
-    text-align: left;
-    text-transform: uppercase;
-    padding: 2px 5px;
-    z-index: 99;
-}
-
 .leftArrow,
 .rightArrow {
     position: absolute;
     width: 70px;
     cursor: pointer;
     z-index: 3;
+    display: none;
 }
 
 .leftArrow {
@@ -260,6 +238,15 @@ body {
     right: 0;
     top: 150px;
     filter: drop-shadow(10px 1px 3px rgb(225, 106, 0));
+}
+
+.bookNotFound {
+    position: absolute;
+    left: 700px;
+    top: 250px;
+    font-size: 24px;
+    font-weight: bold;
+    display: none;
 }
 
 .joinUsSection {
@@ -371,6 +358,7 @@ body {
 }
 
 .section-2 {
+    margin-top: 100px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: column;
@@ -471,40 +459,75 @@ body {
         font-size: 11px;
     }
 
-    .section-1 {
-        flex-direction: column;
-        gap: 100px;
+    .bookNotFound {
+        left: 0;
     }
 
-    .information-container {
-        order: 2;
-        width: 100%;
-        height: 400px;
-        text-align: center;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .information-container h1 {
-        font-size: 24px;
-    }
-
-    .information-container p {
-        font-size: 14px;
-    }
-
-    .image-container {
-        order: 1;
-        margin-top: 30px;
-        width: 100%;
-        display: flex;
-    }
-
-    .image-container img {
-        width: 350px;
-        height: 200px;
+    .main {
+        margin: 0;
         padding: 0;
+        padding-top: 101px;
+    }
+
+    .main .searchSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main .searchSection .leftSideSearchSection {
+        width: 100%;
+    }
+
+    .main .searchSection .leftSideSearchSection h1 {
+        color: rgb(36, 20, 0);
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 196.19%;
+        letter-spacing: 0%;
         margin: 0px auto;
+    }
+
+    .main .searchSection .leftSideSearchSection .inputDiv .searchBookInp {
+        padding: 0;
+        margin: 0;
+        width: 80%;
+        padding-left: 50px;
+        margin: 0px auto;
+    }
+
+    .main .searchSection .leftSideSearchSection .inputDiv .searchInpImage {
+        left: 45px;
+    }
+
+    .slideDiv {
+        flex-direction: column;
+        gap: 0px;
+        padding: 0;
+        padding: 0px 30px;
+    }
+
+    .swiper-search {
+        height: 800px;
+    }
+
+    .main .searchSection .leftSideSearchSection .searchBtn {
+        padding: 0;
+        margin: 0;
+        margin: 0px auto;
+        width: 80%;
+    }
+
+    .bookNotFound {
+        top: 400px;
+        left: 25%;
+    }
+
+    .infoBookDiv .bookNameSwiper {
+        width: 100%;
+        height: 200px;
+        overflow: auto;
     }
 
     .joinUsSection {
