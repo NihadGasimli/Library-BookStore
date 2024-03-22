@@ -79,7 +79,7 @@ sendButton.addEventListener("click", function () {
     const information = {
         fullname: nameContact.value,
         email: emailContact.value,
-        adress: addressContact.value,
+        address: addressContact.value,
         phone: phoneContact.value
     };
 
