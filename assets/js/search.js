@@ -14,24 +14,6 @@ function callSwiper() {
         autoplay: {
             delay: 2000,
         },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            480: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            767: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            1200: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            }
-        },
         observer: true,
         observeParents: true,
         watchSlidesProgress: true,
@@ -95,6 +77,7 @@ const inputSearch = document.querySelector(".searchBookInp");
 const searchBtn = document.querySelector(".searchBtn");
 
 searchBtn.addEventListener("click", function () {
+    document.querySelector(".rightSideSearchSection").style.opacity = "1";
     document.querySelector(".wrapper-search").innerHTML = "";
     let imageClass;
     let bookName;
@@ -103,24 +86,26 @@ searchBtn.addEventListener("click", function () {
     get(ref(db, `/addedBooks`)).then(response => {
         const result = response.val();
         for (let i in result) {
-            if (result[i].bookName.includes(inputSearch.value)) {
+            if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
                 bookName = result[i].bookName;
                 authorName = result[i].authorName;
-                description = result[i].description;
+                description = result[i].bookDescription;
                 if (Number(result[i].yearOfBook) > 2020) {
                     imageClass = "span";
                 } else {
                     imageClass = "newBook";
                 }
                 document.querySelector(".wrapper-search").innerHTML +=
-                `<div class="swiper-slide slideDiv">
+                    `<div class="swiper-slide slideDiv">
                 <div class="imageSwiperDiv">
                     <span class=${imageClass}>New</span>
                     <img src="${result[i].bookImage}" class="imageSwiper" />
                 </div>
+                    <div class="infoBookDiv">
                 <h1 class="bookNameSwiper">${bookName}</h1>
                 <h2 class="authorNameSwiper">${authorName}</h2>
                 <p class="descriptionSwiper">${description}</p>
+                    </div>
                 </div>`;
             }
         }
