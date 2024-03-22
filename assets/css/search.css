@@ -62,7 +62,6 @@ body {
     display: flex;
     gap: 20px;
     flex-direction: column;
-    background-color: green;
 }
 
 .main .searchSection .leftSideSearchSection h1 {
@@ -97,7 +96,6 @@ body {
 
 
 .main .searchSection .leftSideSearchSection .inputDiv {
-    background-color: green;
     display: flex;
     align-items: center;
 }
@@ -134,70 +132,122 @@ body {
 .main .searchSection .rightSideSearchSection {
     width: 70%;
     position: relative;
-    background-color: yellow;
+    opacity: 0;
+    transition: 0.5s;
 }
 
 .swiper-search {
-    height: 400px;
+    height: 500px;
     opacity: 1;
     transition: 0.2s;
     padding: 0;
     margin: 0;
-    background-color: red;
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
 }
 
 .wrapper-search {
     display: flex;
     flex-direction: row;
-    gap: 800px;
-    width: 80%;
     height: 100%;
-    background-color: green;
-    margin-left: 55px;
 }
 
 .slideDiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    gap: 37px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
     width: 100%;
     height: 98%;
+    padding-left: 100px;
+    overflow: hidden;
 }
 
-/* .imageSwiperDiv .newBook {
-        display: none;
-    }
+.slideDiv .imageSwiper {
+    width: 100%;
+    border: 10px solid rgb(66, 45, 7);
+    border-radius: 10px;
+}
 
-    .imageSwiperDiv .span {
-        display: block;
-        position: absolute;
-        right: 10px;
-        border-radius: 3px;
-        box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
-        background-color: rgb(235, 87, 87);
-        color: rgb(255, 255, 255);
-        font-family: Montserrat;
-        font-size: 9px;
-        font-weight: 900;
-        line-height: 196.19%;
-        letter-spacing: 0%;
-        text-align: left;
-        text-transform: uppercase;
-        padding: 2px 5px;
-        z-index: 99;
-    } */
+.imageSwiperDiv {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.infoBookDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.imageSwiperDiv .newBook {
+    display: none;
+}
+
+.infoBookDiv .bookNameSwiper {
+    margin-top: 60px;
+    width: 80%;
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.infoBookDiv .authorNameSwiper {
+    margin-top: 7px;
+    width: 80%;
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.infoBookDiv .descriptionSwiper {
+    margin-top: 4px;
+    overflow: auto;
+    width: 80%;
+    height: 65%;
+    color: rgb(36, 20, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+}
+
+.imageSwiperDiv .span {
+    display: block;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    background-color: rgb(235, 87, 87);
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 9px;
+    font-weight: 900;
+    line-height: 196.19%;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 2px 5px;
+    z-index: 99;
+}
 
 .leftArrow,
 .rightArrow {
     position: absolute;
     width: 70px;
     cursor: pointer;
+    z-index: 3;
 }
 
 .leftArrow {
@@ -321,7 +371,6 @@ body {
 }
 
 .section-2 {
-    margin-top: 238px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: column;
