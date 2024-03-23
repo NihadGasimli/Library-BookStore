@@ -73,20 +73,23 @@ function sendJoinUsToDatabase() {
 
 sendJoinUsToDatabase();
 
-const inputSearch = document.querySelector(".searchBookInp");
 const searchBtn = document.querySelector(".searchBtn");
 
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", async function () {
+    // console.log(inputSearch.value + " inp2");
     document.querySelector(".rightSideSearchSection").style.opacity = "1";
     document.querySelector(".wrapper-search").innerHTML = "";
     let imageClass;
     let bookName;
     let authorName;
     let description;
-    get(ref(db, `/addedBooks`)).then(response => {
+    await get(ref(db, `/addedBooks`)).then(response => {
         const result = response.val();
+        const inputSearch = document.querySelector(".searchBookInp");
         for (let i in result) {
             if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
+                console.log(result[i].bookName.toLowerCase() + " book");
+                console.log(inputSearch.value.toLowerCase() + " inp");
                 document.querySelector(".bookNotFound").style.display = "none";
                 document.querySelector(".leftArrow").style.display = "block";
                 document.querySelector(".rightArrow").style.display = "block";
@@ -110,11 +113,13 @@ searchBtn.addEventListener("click", function () {
                     </div>
                 </div>`;
             }
-            else {
+            else if (!result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase()) && document.querySelector(".wrapper-search").innerHTML === "") {
+                document.querySelector(".bookNotFound").style.display = "block";
                 document.querySelector(".leftArrow").style.display = "none";
                 document.querySelector(".rightArrow").style.display = "none";
-                document.querySelector(".bookNotFound").style.display = "block";
             }
         }
+
     })
+    // document.querySelector(".searchBookInp").value = "";
 })
