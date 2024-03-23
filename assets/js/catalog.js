@@ -187,6 +187,8 @@ function clickReadMore() {
     let readMoreBtnAll = document.querySelectorAll(".readMoreBtn");
     readMoreBtnAll.forEach(btn => {
         btn.addEventListener("click", function () {
+            document.querySelector(".header").classList.add("headerOnReadMore");
+            console.log(document.querySelector(".header").classList);
             document.querySelector(".allBooksSection").style.opacity = "0";
             document.querySelector(".bestellerSection").style.opacity = "0";
             document.querySelector(".newReleasesSection").style.opacity = "0";
