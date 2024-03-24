@@ -251,8 +251,9 @@
 }
 
 .rightSide .addBook .searchBook .searchHistory .historyDiv p {
+    padding: 0px 10px;
     height: 25px;
-    color: #BCBCBC;
+    color: #000;
     font-family: Preahvihear;
     font-size: 20px;
     font-style: normal;
@@ -1386,7 +1387,6 @@
 
     .rightSide .contactUs .contactUsTable tr td {
         padding: 0;
-        /* width: 100%; */
     }
 
     .rightSide .books {
