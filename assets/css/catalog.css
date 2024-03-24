@@ -6,7 +6,6 @@
 }
 
 body {
-    background-color: rgb(255, 250, 245);
     font-family: Montserrat;
 }
 
@@ -632,7 +631,7 @@ body {
 }
 
 .section-2 {
-    margin-top: 250px;
+    margin-top: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -731,6 +730,19 @@ body {
     to {
         opacity: 1;
     }
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #D4D4D4;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #720418;
 }
 
 @media (max-width:680px) {
