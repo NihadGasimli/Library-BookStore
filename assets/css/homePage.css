@@ -425,7 +425,7 @@ body {
     padding: 2px 6px;
 }
 
-.inform ul{
+.inform ul {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -441,14 +441,27 @@ body {
     display: none;
 }
 
+::-webkit-scrollbar {
+    height: 6px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #D4D4D4;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #720418;
+}
+
 @media (max-width:680px) {
     .header {
         width: 100%;
         padding: 0;
-        padding: 0px  15px;
+        padding: 0px 15px;
     }
 
-    .header-list{
+    .header-list {
         background-color: #fff;
         z-index: 999;
         width: 100%;
@@ -459,12 +472,13 @@ body {
         flex-direction: column;
     }
 
-    .joinUsBtn{
+    .joinUsBtn {
         margin: 0;
         padding: 0;
         align-self: center;
     }
-    .joinUsBtn img{
+
+    .joinUsBtn img {
         margin: 0px auto;
         padding-right: 30px;
     }
@@ -563,7 +577,7 @@ body {
         margin-top: 132px;
     }
 
-    .aboutDelivery{
+    .aboutDelivery {
         padding: 0px 10px;
     }
 
