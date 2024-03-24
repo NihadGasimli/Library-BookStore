@@ -277,7 +277,6 @@ body {
     padding: 2px 6px;
 }
 
-
 .inform ul {
     display: flex;
     flex-direction: column;
@@ -292,6 +291,19 @@ body {
 
 .responsive-footer {
     display: none;
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #D4D4D4;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #720418;
 }
 
 @media (max-width:680px) {
