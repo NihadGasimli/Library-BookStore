@@ -204,9 +204,11 @@ body {
 
 .categoriesDiv {
     width: 80%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-self: flex-start;
+    margin-bottom: 20px;
 }
 
 .categoriesDiv h1 {
