@@ -151,12 +151,16 @@ aboutInfoAddBtn.addEventListener("click", function () {
 });
 
 document.querySelector(".closeHamburger").onclick = function () {
-    document.querySelector(".leftSide").style.display = "none";
-    document.querySelector(".hamburgerMenu").style.display = "block"
+    document.querySelector(".leftSide").style.width = "0px";
+    document.querySelector(".hamburgerMenu").style.display = "block";
+    setTimeout(function () {
+        document.querySelector(".rightSide").style.zIndex = "999999";
+    }, 500);
 }
 
 document.querySelector(".hamburgerMenu").onclick = function () {
-    document.querySelector(".leftSide").style.display = "flex";
+    document.querySelector(".leftSide").style.width = "247px";
+    document.querySelector(".rightSide").style.zIndex = "1";
     document.querySelector(".hamburgerMenu").style.display = "none"
 }
 
