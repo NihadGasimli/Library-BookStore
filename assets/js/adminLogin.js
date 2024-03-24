@@ -4,7 +4,10 @@ import { ref, set, get, onValue, push } from "https://www.gstatic.com/firebasejs
 
 const joinBtn = document.querySelector(".joinBtn");
 const nameInp = document.querySelector(".nameInp");
-const passInp = document.querySelector(".passInp")
+const passInp = document.querySelector(".passInp");
+
+var rightClickEnabled = false;
+
 
 joinBtn.addEventListener("click", function () {
     checkLogin();
@@ -29,6 +32,7 @@ function checkLogin() {
                             document.querySelector(".adminPanel").style.display = "flex";
                             document.querySelector(".loginPanel").style.display = "none";
                             document.querySelector(".adminUsername").innerHTML = nameInp.value;
+                            enableRightClick();
                         }, 3000)
                         return;
                     }
@@ -49,4 +53,15 @@ function checkLogin() {
         alert("Please write username and pass!")
     }
 };
+
+function enableRightClick() {
+    document.removeEventListener('contextmenu', preventRightClick);
+    rightClickEnabled = true;
+};
+
+function preventRightClick(event) {
+    event.preventDefault();
+};
+
+document.addEventListener('contextmenu', preventRightClick);
 
