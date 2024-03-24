@@ -189,82 +189,97 @@ window.addEventListener("keyup", function () {
                 document.querySelector(".searchHistory").style.display = "flex";
                 document.querySelector(".searchHistory").innerHTML = "";
                 for (let i in response.items) {
-                    document.querySelector(".searchHistory").innerHTML +=
-                        `<div class="historyDiv">
-                    <img src="../images/clock.svg" />
-                    <p>${response.items[i].volumeInfo.title}</p>
-                    </div>`;
+                    if (!document.querySelector(".searchHistory").innerHTML.includes(response.items[i].volumeInfo.title) && response.items[i].volumeInfo.title.trim() !== "") {
+                        let bookName;
 
-                    let historyDivAll = document.querySelectorAll(".historyDiv");
-                    historyDivAll.forEach(function (historyDivAll) {
-                        historyDivAll.onclick = function () {
-                            let bookName = document.querySelector(".bookNameInp");
-                            let authorName = document.querySelector(".authorNameInp");
-                            let bookImage = document.querySelector(".bookImgUrlInp");
-                            let yearOfBook = document.querySelector(".yearOfBookInp");
-                            let bookDescription = document.querySelector(".descriptionInp");
-
-                            bookName.value = "";
-                            authorName.value = "";
-                            bookImage.value = "";
-                            yearOfBook.value = "";
-                            bookDescription.value = "";
-
-                            try {
-                                if (response.items[i].volumeInfo.title !== undefined) {
-                                    bookName.value = response.items[i].volumeInfo.title;
-                                }
-                            }
-                            catch {
-                                console.log("error");
-                            }
-
-                            try {
-                                if (response.items[i].volumeInfo.authors !== undefined) {
-                                    authorName.value = response.items[i].volumeInfo.authors;
-                                }
-                            }
-                            catch {
-                                console.log("error");
-                            }
-
-                            try {
-                                if (response.items[i].volumeInfo.imageLinks.thumbnail !== undefined) {
-                                    bookImage.value = response.items[i].volumeInfo.imageLinks.thumbnail;
-                                }
-                            }
-                            catch {
-                                console.log("error");
-                            }
-
-                            try {
-                                if (response.items[i].volumeInfo.publishedDate !== undefined) {
-                                    yearOfBook.value = response.items[i].volumeInfo.publishedDate;
-                                }
-                            }
-                            catch {
-                                console.log("error");
-                            }
-
-                            try {
-
-                                if (response.items[i].volumeInfo.subtitle !== undefined) {
-                                    bookDescription.value = response.items[i].volumeInfo.subtitle;
-                                }
-                            }
-                            catch {
-                                console.log("error")
-                            }
-
-                            searchBookInp.value = "";
-                            document.querySelector(".searchHistory").style.display = "none";
+                        if (response.items[i].volumeInfo.title.length > 46) {
+                            bookName = response.items[i].volumeInfo.title.slice(0, 46) + "...";
                         }
-                    })
+                        else {
+                            bookName = response.items[i].volumeInfo.title;
+                        }
+                        document.querySelector(".searchHistory").innerHTML +=
+                            `<div class="historyDiv">
+                            <img src="../images/clock.svg" />
+                            <p>${bookName}</p>
+                            </div>`;
+
+                        let historyDivAll = document.querySelectorAll(".historyDiv");
+                        historyDivAll.forEach(function (historyDivAll) {
+                            historyDivAll.onclick = function () {
+                                let bookName = document.querySelector(".bookNameInp");
+                                let authorName = document.querySelector(".authorNameInp");
+                                let bookImage = document.querySelector(".bookImgUrlInp");
+                                let yearOfBook = document.querySelector(".yearOfBookInp");
+                                let bookDescription = document.querySelector(".descriptionInp");
+
+                                for (let j in response.items) {
+
+                                    if (response.items[j].volumeInfo.title === historyDivAll.querySelector("p").innerHTML) {
+                                        bookName.value = "";
+                                        authorName.value = "";
+                                        bookImage.value = "";
+                                        yearOfBook.value = "";
+                                        bookDescription.value = "";
+
+                                        try {
+                                            if (response.items[j].volumeInfo.title !== undefined) {
+                                                bookName.value = response.items[j].volumeInfo.title;
+                                            }
+                                        }
+                                        catch {
+                                            console.log("error");
+                                        }
+
+                                        try {
+                                            if (response.items[j].volumeInfo.authors !== undefined) {
+                                                authorName.value = response.items[j].volumeInfo.authors;
+                                            }
+                                        }
+                                        catch {
+                                            console.log("error");
+                                        }
+
+                                        try {
+                                            if (response.items[j].volumeInfo.imageLinks.thumbnail !== undefined) {
+                                                bookImage.value = response.items[j].volumeInfo.imageLinks.thumbnail;
+                                            }
+                                        }
+                                        catch {
+                                            console.log("error");
+                                        }
+
+                                        try {
+                                            if (response.items[j].volumeInfo.publishedDate !== undefined) {
+                                                yearOfBook.value = response.items[j].volumeInfo.publishedDate;
+                                            }
+                                        }
+                                        catch {
+                                            console.log("error");
+                                        }
+
+                                        try {
+
+                                            if (response.items[j].volumeInfo.subtitle !== undefined) {
+                                                bookDescription.value = response.items[j].volumeInfo.subtitle;
+                                            }
+                                        }
+                                        catch {
+                                            console.log("error")
+                                        }
+
+                                        searchBookInp.value = "";
+                                        document.querySelector(".searchHistory").style.display = "none";
+                                    }
+                                }
+                            }
+                        })
+                    }
                 }
             }
         );
     }
-    else if (searchBookInp.value.trim() === "") {
+    else {
         document.querySelector(".searchHistory").style.display = "none"
     }
 });
