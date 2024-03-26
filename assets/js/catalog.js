@@ -323,7 +323,7 @@ function sendJoinUsToDatabase() {
         let email = document.querySelector(".emailInpJoinUs");
         let message = document.querySelector(".messageInpJoinUs");
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (name.value.trim() !== "" && emailPattern.test(emailContact.value)) {
+        if (name.value.trim() !== "" && emailPattern.test(email.value)) {
             const info = {
                 email: email.value,
                 fullname: name.value,
