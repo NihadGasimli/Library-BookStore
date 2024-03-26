@@ -676,6 +676,10 @@
     max-width: 95%;
 }
 
+.rightSide .joinUs table .joinUsTableDataMessage{
+    max-width: 100px;
+}
+
 .rightSide .joinUs table tr {
     background-color: #FFF;
     text-align: center;
