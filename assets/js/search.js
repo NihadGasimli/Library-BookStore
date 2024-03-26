@@ -77,7 +77,6 @@ sendJoinUsToDatabase();
 const searchBtn = document.querySelector(".searchBtn");
 
 searchBtn.addEventListener("click", async function () {
-    // console.log(inputSearch.value + " inp2");
     document.querySelector(".rightSideSearchSection").style.opacity = "1";
     document.querySelector(".wrapper-search").innerHTML = "";
     let imageClass;
@@ -89,8 +88,6 @@ searchBtn.addEventListener("click", async function () {
         const inputSearch = document.querySelector(".searchBookInp");
         for (let i in result) {
             if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
-                console.log(result[i].bookName.toLowerCase() + " book");
-                console.log(inputSearch.value.toLowerCase() + " inp");
                 document.querySelector(".bookNotFound").style.display = "none";
                 document.querySelector(".leftArrow").style.display = "block";
                 document.querySelector(".rightArrow").style.display = "block";
