@@ -221,9 +221,17 @@ function clickReadMore() {
                                 </div>
                             `;
                         }
+
+                        window.addEventListener("keyup", function (e) {
+                            if (e.key === "Enter") {
+                                addAndShowComments(i);
+                            }
+                        })
+
                         document.querySelector(".sendAnonimCommentBtn").onclick = function () {
                             addAndShowComments(i);
                         }
+
                         return;
                     }
                 }
@@ -231,6 +239,9 @@ function clickReadMore() {
         });
     });
 };
+
+
+
 
 function clickType() {
     const swiperWrapperAll = document.querySelector(".wrapper-all");
@@ -281,21 +292,23 @@ function clickType() {
 function addAndShowComments(key) {
     document.querySelector(".comments").style.display = "flex";
     const comment = document.querySelector(".anonimCommentInp");
-    let snapshot = push(ref(db, `/addedBooks/${key}/comments`));
-    set(ref(db, `/addedBooks/${key}/comments/${snapshot.key}`), comment.value);
-    document.querySelector(".comments").innerHTML = "";
-    get(ref(db, `/addedBooks/${key}/comments`)).then(response => {
-        const result = response.val();
-        for (let i in result) {
-            document.querySelector(".comments").innerHTML += `
+    if (comment.value.trim() !== "") {
+        let snapshot = push(ref(db, `/addedBooks/${key}/comments`));
+        set(ref(db, `/addedBooks/${key}/comments/${snapshot.key}`), comment.value);
+        document.querySelector(".comments").innerHTML = "";
+        get(ref(db, `/addedBooks/${key}/comments`)).then(response => {
+            const result = response.val();
+            for (let i in result) {
+                document.querySelector(".comments").innerHTML += `
                 <div class="comment">
                     <h3>Anonim</h3>
                     <p>${result[i]}</p>
                 </div>
             `;
-        }
-    });
-    comment.value = "";
+            }
+        });
+        comment.value = "";
+    }
 }
 
 document.querySelector(".joinUsBtn").addEventListener("click", function () {
