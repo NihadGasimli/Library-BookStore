@@ -121,5 +121,5 @@ searchBtn.addEventListener("click", async function () {
         }
 
     })
-    // document.querySelector(".searchBookInp").value = "";
+    document.querySelector(".searchBookInp").value = "";
 })
