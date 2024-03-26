@@ -1,6 +1,6 @@
 import db from "./firebase.mjs";
 
-import { ref, set, get, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+import { ref, set, get, onValue, push, remove } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
 const addBookBtn = document.querySelector(".addBookBtn");
 const aboutInfoAddBtn = document.querySelector(".aboutInfoAddBtn");
@@ -27,15 +27,16 @@ onValue(ref(db, `/contactUs`), response => {
         </tr>`;
     for (let i in result) {
         document.querySelector(".contactUsTable").innerHTML +=
-            `<tr>
-         <td>${idCounter + 1}</td>
+            `<tr class="contactUsTableRow">
+         <td class="contactUsTableIdRow"><button class="removeContactBtn">X</button>${idCounter + 1}</td>
          <td>${result[i].fullname}</td>
          <td>${result[i].address}</td>
-         <td>${result[i].email}</td>
+         <td class="contactUsEmail">${result[i].email}</td>
          <td>${result[i].phone}</td>
             </tr>`;
         idCounter++;
     }
+    deleteContact();
 });
 
 onValue(ref(db, `/addedBooks`), response => {
@@ -52,15 +53,17 @@ onValue(ref(db, `/addedBooks`), response => {
         </tr>`;
     for (let i in result) {
         document.querySelector(".booksTable").innerHTML +=
-            `<tr>
+            `<tr class="booksTableRow">
          <td>${idCounter + 1}</td>
-         <td>${result[i].bookName}</td>
-         <td>${result[i].bookDescription}</td>
-         <td>${result[i].bookType}</td>
-         <td>${result[i].authorName}</td>
+         <td class="booksTableDataName">${result[i].bookName}</td>
+         <td class="booksTableDataDescription">${result[i].bookDescription}</td>
+         <td class="booksTableDataType">${result[i].bookType}</td>
+         <td class="booksTableDataAuthor">${result[i].authorName}</td>
             </tr>`;
         idCounter++;
     }
+
+    editingBook();
 });
 
 
@@ -155,7 +158,7 @@ document.querySelector(".closeHamburger").onclick = function () {
     document.querySelector(".hamburgerMenu").style.display = "block";
     setTimeout(function () {
         document.querySelector(".rightSide").style.zIndex = "999999";
-    }, 500);
+    }, 300);
 }
 
 document.querySelector(".hamburgerMenu").onclick = function () {
@@ -169,7 +172,10 @@ function closeHamburgerMenuOnclick() {
     menuBtnAll.forEach(function (menuBtn) {
         menuBtn.onclick = function () {
             if (document.querySelector(".hamburgerMenu").style.display === "none") {
-                document.querySelector(".leftSide").style.display = "none";
+                document.querySelector(".leftSide").style.width = "0px";
+                setTimeout(function () {
+                    document.querySelector(".rightSide").style.zIndex = "999999";
+                }, 300);
                 document.querySelector(".hamburgerMenu").style.display = "block";
             }
             else {
@@ -284,12 +290,6 @@ window.addEventListener("keyup", function () {
     }
 });
 
-document.addEventListener("click", function (event) {
-    const addModal = document.querySelector(".addModal");
-    if (!addModal.contains(event.target) && event.target !== document.querySelector(".addTypeDivBtn")) {
-        addModal.style.display = "none";
-    }
-});
 
 document.querySelector(".addTypeDivBtn").addEventListener("click", function () {
     if (document.querySelector(".addModal").style.display === "flex") {
@@ -318,4 +318,197 @@ onValue(ref(db, `/bookTypes`), response => {
         document.querySelector(".bookTypeSelect").innerHTML +=
             `<option>${result[j]}</option>`
     }
-})
+});
+
+function editingBook() {
+    let booksTableRowAll = document.querySelectorAll(".booksTableRow");
+
+    booksTableRowAll.forEach(function (booksTableRow) {
+        booksTableRow.onmouseenter = function () {
+            booksTableRow.style = "box-shadow: 0px 0px 10px rgba(21, 86, 224, 0.918)";
+            booksTableRow.style.cursor = "pointer"
+        }
+
+        booksTableRow.onclick = function () {
+            closeEditBookSectionOnClickOutside();
+            setTimeout(function () {
+                document.querySelector(".editBookSection").style.display = "flex";
+                setTimeout(function () {
+                    document.querySelector(".editBookSection").style.opacity = "1";
+                }, 1)
+
+            }, 1)
+
+            let bookName = booksTableRow.querySelector(".booksTableDataName").innerHTML;
+
+            get(ref(db, `/addedBooks`)).then(response => {
+                const result = response.val();
+
+                for (let i in result) {
+                    if (result[i].bookName === bookName) {
+                        localStorage.setItem("key", i);
+                        document.querySelector(".bookNameEditInp").value = bookName;
+                        document.querySelector(".authorNameEditInp").value = result[i].authorName;
+                        document.querySelector(".bookCategoryEditInp").value = result[i].bookType;
+                        document.querySelector(".bookYearEditInp").value = result[i].yearOfBook;
+                        document.querySelector(".bookImageEditInp").value = result[i].bookImage;
+                        document.querySelector(".bookDescriptionEditInp").value = result[i].bookDescription;
+                    }
+                }
+            })
+
+            document.querySelector(".saveEditBtn").onclick = function () {
+                if (document.querySelector(".bookNameEditInp").value.trim() !== "" && document.querySelector(".authorNameEditInp").value.trim() !== "" && document.querySelector(".bookCategoryEditInp").value.trim() !== "" && document.querySelector(".bookYearEditInp").value.trim() !== "" && document.querySelector(".bookImageEditInp").value.trim() !== "" && document.querySelector(".bookDescriptionEditInp").value.trim() !== "") {
+                    get(ref(db, `/addedBooks`)).then(
+                        response => {
+                            const result = response.val();
+
+                            for (let j in result) {
+                                if (j === localStorage.getItem("key")) {
+                                    set(ref(db, `/addedBooks/${j}/bookName`), document.querySelector(".bookNameEditInp").value);
+                                    set(ref(db, `/addedBooks/${j}/authorName`), document.querySelector(".authorNameEditInp").value);
+                                    set(ref(db, `/addedBooks/${j}/bookType`), document.querySelector(".bookCategoryEditInp").value);
+                                    set(ref(db, `/addedBooks/${j}/yearOfBook`), document.querySelector(".bookYearEditInp").value);
+                                    set(ref(db, `/addedBooks/${j}/bookImage`), document.querySelector(".bookImageEditInp").value);
+                                    set(ref(db, `/addedBooks/${j}/bookDescription`), document.querySelector(".bookDescriptionEditInp").value);
+                                }
+                            }
+                        }
+                    )
+                    document.querySelector(".saveEditBtn").style.display = "none";
+                    document.querySelector(".succesfullySaved").style.display = "flex";
+                    document.querySelector(".removeBookBtn").style.display = "none";
+                    setTimeout(function () {
+                        document.querySelector(".succesfullySaved").style.display = "none";
+                        document.querySelector(".saveEditBtn").style.display = "block";
+                        document.querySelector(".removeBookBtn").style.display = "block";
+                    }, 2000)
+                }
+                else {
+                    document.querySelector(".saveEditBtn").style.display = "none";
+                    document.querySelector(".errorSaved").style.display = "flex";
+                    document.querySelector(".removeBookBtn").style.display = "none";
+                    if (document.querySelector(".bookNameEditInp").value.trim() === "") {
+                        document.querySelector(".bookNameEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".bookNameEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+                    if (document.querySelector(".authorNameEditInp").value.trim() === "") {
+                        document.querySelector(".authorNameEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".authorNameEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+                    if (document.querySelector(".bookCategoryEditInp").value.trim() === "") {
+                        document.querySelector(".bookCategoryEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".bookCategoryEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+                    if (document.querySelector(".bookYearEditInp").value.trim() === "") {
+                        document.querySelector(".bookYearEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".bookYearEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+                    if (document.querySelector(".bookImageEditInp").value.trim() === "") {
+                        document.querySelector(".bookImageEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".bookImageEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+                    if (document.querySelector(".bookDescriptionEditInp").value.trim() === "") {
+                        document.querySelector(".bookDescriptionEditInp").style.backgroundColor = "red";
+                        setTimeout(function () {
+                            document.querySelector(".bookDescriptionEditInp").style.backgroundColor = "#fff"
+                        }, 2000);
+                    }
+
+                    setTimeout(function () {
+                        document.querySelector(".saveEditBtn").style.display = "block";
+                        document.querySelector(".errorSaved").style.display = "none";
+                        document.querySelector(".removeBookBtn").style.display = "block";
+                    }, 2000)
+                }
+            }
+
+            document.querySelector(".removeBookBtn").onclick = function () {
+                get(ref(db, `/addedBooks`)).then(response => {
+                    const result = response.val();
+                    for (let j in result) {
+                        if (j === localStorage.getItem("key")) {
+                            remove(ref(db, `/addedBooks/${j}`));
+                        }
+                    }
+                })
+                document.querySelector(".removeBookBtn").style.display = "none";
+                document.querySelector(".saveEditBtn").style.display = "none";
+                document.querySelector(".succesfullyDeleted").style.display = "flex";
+
+                setTimeout(function () {
+                    document.querySelector(".succesfullyDeleted").style.display = "none";
+                    document.querySelector(".editBookSection").style.display = "none";
+                    document.querySelector(".removeBookBtn").style.display = "block";
+                    document.querySelector(".saveEditBtn").style.display = "block";
+                }, 2000);
+            }
+        }
+
+        booksTableRow.onmouseleave = function () {
+            booksTableRow.style = "box-shadow: 0px";
+
+        }
+    })
+}
+
+function deleteContact() {
+    let contactUsTableRowAll = document.querySelectorAll(".contactUsTableRow");
+    contactUsTableRowAll.forEach(function (contactUsTableRow) {
+        contactUsTableRow.querySelector(".removeContactBtn").onclick = function () {
+            let email = contactUsTableRow.querySelector(".contactUsEmail").innerHTML;
+            get(ref(db, `/contactUs`)).then(
+                response => {
+                    const result = response.val();
+                    for (let i in result) {
+                        if (result[i].email === email) {
+                            remove(ref(db, `/contactUs/${i}`));
+                        }
+                    }
+                }
+            )
+        }
+    });
+}
+
+document.querySelector(".closeEditSectionBtn").onclick = function () {
+    document.querySelector(".editBookSection").style.opacity = "0";
+    setTimeout(function () {
+        editBookSection.style.display = "none";
+    }, 500);
+}
+
+document.addEventListener("click", function (event) {
+    const addModal = document.querySelector(".addModal");
+    if (!addModal.contains(event.target) && event.target !== document.querySelector(".addTypeDivBtn")) {
+        addModal.style.display = "none";
+    }
+});
+
+function closeEditBookSectionOnClickOutside() {
+    document.addEventListener("click", function (event) {
+        const editBookSection = document.querySelector(".editBookSection");
+        const editBookDiv = document.querySelector(".editBookDiv");
+
+        if (!editBookDiv.contains(event.target) && editBookSection.style.display === "flex") {
+            document.querySelector(".editBookSection").style.opacity = "0";
+            setTimeout(function () {
+                editBookSection.style.display = "none";
+            }, 500);
+            localStorage.removeItem("key");
+        }
+    });
+
+}
+
+

@@ -809,6 +809,18 @@
     padding: 8px 16px;
 }
 
+.rightSide .contactUs .contactUsTable .removeContactBtn {
+    background-color: red;
+    color: #fff;
+    margin-right: 10px;
+    border: 0px;
+    padding: 3px 3px;
+}
+
+.rightSide .contactUs .contactUsTable .contactUsTableIdRow {
+    text-align: left;
+}
+
 .rightSide .contactUs table .firstChildOfContactTable td {
     background-color: #720418;
     box-shadow: 0px -1px 0px 0px #E6E7E9 inset;
@@ -846,6 +858,7 @@
     flex-direction: row;
     gap: 13px;
     padding: 10px 35px 0px 0px;
+    align-self: flex-start;
 }
 
 .logo .logoImageLogin img {
@@ -896,6 +909,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .login {
@@ -903,11 +917,10 @@
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    width: 662px;
-    height: 544.31px;
+    width: 46%;
+    height: 80%;
     align-self: center;
     gap: 22px;
-    margin-top: 30px;
 }
 
 .login h1 {
@@ -924,8 +937,8 @@
 }
 
 .login .nameInp {
-    width: 552.937px;
-    height: 74.541px;
+    width: 80%;
+    height: 15%;
     flex-shrink: 0;
     padding: 18.03px 51.64px;
     border: 1px solid #cecece;
@@ -939,8 +952,8 @@
 }
 
 .login .passInp {
-    width: 552.937px;
-    height: 74.541px;
+    width: 80%;
+    height: 15%;
     flex-shrink: 0;
     padding: 18.03px 54.29px;
     border: 1px solid #cecece;
@@ -951,11 +964,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 12%;
 }
 
 .login button {
-    width: 552.937px;
-    height: 74.541px;
+    width: 80%;
+    height: 15%;
     flex-shrink: 0;
     border-radius: 5px;
     border: 1px solid #cecece;
@@ -967,7 +981,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-top: 84px;
     transition: 0.2s;
 }
 
@@ -980,10 +993,8 @@
 
 .login .succesfulLogin {
     background-color: rgb(26, 198, 26);
-    margin-top: 84px;
-    width: 500px;
+    width: 80%;
     height: 100px;
-    display: flex;
     justify-content: center;
     align-items: center;
     display: none;
@@ -998,10 +1009,8 @@
 
 .login .invalidLogin {
     background-color: rgb(198, 26, 26);
-    margin-top: 84px;
-    width: 500px;
+    width: 80%;
     height: 100px;
-    margin: 50px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1085,6 +1094,206 @@
     background-color: #720418;
 }
 
+.editBookSection {
+    width: 100%;
+    height: 100vh;
+    z-index: 99999999999;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.editBookDiv {
+    width: 50%;
+    height: 90%;
+    border: 10px solid #85051c;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.closeEditSectionBtn {
+    align-self: flex-start;
+    width: 40px;
+    border-radius: 20px;
+    background-color: red;
+    color: #fff;
+    border: 0px;
+    font-size: 20px;
+    position: absolute;
+    left: 1120px;
+    top: 30px;
+}
+
+.editBookDiv h1 {
+    align-self: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: Montserrat;
+    margin-top: 10px;
+}
+
+.bookNameEdit,
+.authorNameEdit,
+.bookCategoryEdit,
+.bookYearEdit,
+.bookImageEdit,
+.bookDescriptionEdit {
+    height: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-right: 100px;
+}
+
+.bookDescriptionEdit {
+    height: 20%;
+    min-height: 25%;
+}
+
+.bookNameEdit label,
+.authorNameEdit label,
+.bookCategoryEdit label,
+.bookYearEdit label,
+.bookImageEdit label,
+.bookDescriptionEdit label {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Montserrat;
+}
+
+.bookDescriptionEdit textarea {
+    max-height: 100%;
+    resize: none;
+}
+
+.bookNameEdit input,
+.authorNameEdit input,
+.bookCategoryEdit input,
+.bookYearEdit input,
+.bookImageEdit input,
+.bookDescriptionEdit textarea {
+    width: 60%;
+    height: 80%;
+}
+
+.saveEditBtn {
+    width: 60%;
+    height: 40%;
+    align-self: center;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #ff8b00;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: 0.3s;
+    box-sizing: border-box;
+    margin-top: 10px;
+    position: relative;
+}
+
+.saveEditBtn:hover {
+    background-color: #fff;
+    color: #ff8b00;
+    border: 3px solid #ff8b00;
+    transition: 0.3s;
+}
+
+.removeBookBtn {
+    width: 15%;
+    height: 30%;
+    background-color: transparent;
+    align-self: flex-end;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    border: 0px;
+    position: relative;
+    top: 15px;
+    right: 10px;
+    background-color: #85051c;
+    border-radius: 20px;
+}
+
+.removeBookBtn:hover {
+    text-decoration: underline;
+}
+
+.succesfullySaved {
+    background-color: rgb(26, 198, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 40%;
+    display: none;
+    align-self: center;
+    color: #fff;
+    border-radius: 5px;
+    border: 0px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.succesfullyDeleted {
+    background-color: rgb(26, 198, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 40%;
+    display: none;
+    align-self: center;
+    color: #fff;
+    border-radius: 5px;
+    border: 0px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.errorSaved {
+    background-color: rgb(216, 12, 12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 40%;
+    display: none;
+    align-self: center;
+    color: #fff;
+    border-radius: 5px;
+    border: 0px;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
 @media (max-width: 680px) {
     .logo .logoImageLogin img {
         width: 35.88px;
@@ -1103,57 +1312,58 @@
         font-size: 13px;
     }
 
+    .loginPanel {
+        gap: 100px;
+    }
+
     .login {
-        width: 229.72px;
-        height: 303.93px;
+        width: 80%;
+        height: 55%;
     }
 
     .login h1 {
         font-size: 20px;
         margin-top: 27px;
-        width: 152px;
+        width: 100%;
     }
 
     .login .nameInp {
-        width: 192.61px;
-        height: 40.84px;
+        width: 80%;
         font-size: 16px;
     }
 
     .login .passInp {
-        width: 192.61px;
-        height: 40.84px;
+        width: 80%;
         font-size: 16px;
     }
 
     .login button {
-        width: 193.49px;
-        height: 37.7px;
+        width: 80%;
         font-size: 18px;
         margin-top: 10px;
     }
 
     .login .succesfulLogin {
-        width: 193.49px;
-        height: 37.7px;
+        width: 80%;
+        height: 60px;
         margin-top: 10px;
     }
 
     .login .succesfulLogin h4 {
-        font-size: 14px;
+        font-size: 18px;
         text-align: center;
         padding: 10px 10px;
         margin-top: 10px;
     }
 
     .login .invalidLogin {
-        width: 193.49px;
-        height: 37.7px;
+        width: 80%;
+        height: 60px;
         margin-top: 10px;
     }
 
     .login .invalidLogin h4 {
-        font-size: 14px;
+        font-size: 18px;
         text-align: center;
         padding: 10px 10px;
         margin-top: 10px;
@@ -1209,6 +1419,7 @@
         position: absolute;
         left: 200px;
         font-family: Montserrat;
+        cursor: pointer;
     }
 
     .rightSide .adminButton {
@@ -1226,6 +1437,7 @@
         justify-content: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.09);
+        backdrop-filter: blur(4px);
         z-index: 2;
         border-radius: 5px;
     }

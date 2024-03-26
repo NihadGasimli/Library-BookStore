@@ -22,9 +22,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap"
         rel="stylesheet">
-        <script src="../js/adminLogin.js" type="module" defer></script>
-        <link href="../css/adminpanel.css" rel="stylesheet" />
-        <script src="../js/admin.js" type="module" defer></script>
+    <script src="../js/adminLogin.js" type="module" defer></script>
+    <link href="../css/adminpanel.css" rel="stylesheet" />
+    <script src="../js/admin.js" type="module" defer></script>
     <title>Library</title>
 </head>
 
@@ -54,6 +54,48 @@
             </div>
         </section>
     </div>
+
+    <section class="editBookSection">
+        <div class="editBookDiv">
+            <h1>Edit book:</h1>
+            <div class="bookNameEdit">
+                <label>Book name:</label>
+                <input type="text" class="bookNameEditInp" />
+            </div>
+            <div class="authorNameEdit">
+                <label>Author name:</label>
+                <input type="text" class="authorNameEditInp" />
+            </div>
+            <div class="bookCategoryEdit">
+                <label>Book category:</label>
+                <input type="text" class="bookCategoryEditInp" />
+            </div>
+            <div class="bookYearEdit">
+                <label>Book year:</label>
+                <input type="number" class="bookYearEditInp" />
+            </div>
+            <div class="bookImageEdit">
+                <label>Book image Url:</label>
+                <input type="url" class="bookImageEditInp" />
+            </div>
+            <div class="bookDescriptionEdit">
+                <label>Book description:</label>
+                <textarea class="bookDescriptionEditInp"></textarea>
+            </div>
+            <button class="saveEditBtn">Save</button>
+            <button class="removeBookBtn">Remove book</button>
+            <div class="succesfullySaved">
+                <h4>Succesfully saved!</h4>
+            </div>
+            <div class="errorSaved">
+                <h4>Changes not saved!<br>Please fill in all inputs!</h4>
+            </div>
+            <div class="succesfullyDeleted">
+                <h4>Book succesfully deleted!</h4>
+            </div>
+        </div>
+        <button class="closeEditSectionBtn">X</button>
+    </section>
 
     <section class="adminPanel">
         <div class="leftSide">
