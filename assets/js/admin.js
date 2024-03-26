@@ -84,7 +84,7 @@ onValue(ref(db, `/joinUs`), response => {
          <td>${idCounter + 1}</td>
          <td>${result[i].fullname}</td>
          <td>${result[i].email}</td>
-         <td>${result[i].message}</td>
+         <td class="joinUsTableDataMessage">${result[i].message}</td>
             </tr>`;
         idCounter++;
     }
