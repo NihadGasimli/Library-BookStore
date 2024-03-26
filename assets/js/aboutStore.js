@@ -4,7 +4,6 @@ import { onValue, ref, get, push, set } from "https://www.gstatic.com/firebasejs
 
 onValue(ref(db, `/aboutStore`), response => {
     const result = response.val();
-    console.log(result)
     document.querySelector(".storeTitle").innerHTML = result.titlee;
     document.querySelector(".storeDescription").innerHTML = result.description;
     document.querySelector(".storeImage").src = result.aboutImage;
