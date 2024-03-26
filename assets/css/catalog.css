@@ -25,7 +25,6 @@ body {
     padding-right: 64px;
     z-index: 99;
     position: fixed;
-    /* position: unset; */
 }
 
 .header-list {
@@ -39,7 +38,7 @@ body {
 
 .header-list li a {
     color: rgb(36, 20, 0);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
 }
 
