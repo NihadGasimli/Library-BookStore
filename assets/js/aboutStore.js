@@ -43,7 +43,8 @@ function sendJoinUsToDatabase() {
         let name = document.querySelector(".nameInpJoinUs");
         let email = document.querySelector(".emailInpJoinUs");
         let message = document.querySelector(".messageInpJoinUs");
-        if (name.value.trim() !== "" && email.value.trim() !== "") {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (name.value.trim() !== "" && emailPattern.test(email.value)) {
             // Show Bootstrap success alert
             const info = {
                 email: email.value,
