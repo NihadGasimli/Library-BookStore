@@ -266,9 +266,13 @@ function clickType() {
                             </div>
                         `;
                         swiperWrapperAll.style.justifyContent = "center";
+                        clickReadMore();
+                        return;
                     }
-                    clickReadMore()
                 }
+                swiperWrapperAll.innerHTML =
+                    `<h1 style="font-size:24px">Book not found!</h1>`;
+                swiperWrapperAll.style.justifyContent = "center";
             })
         })
     })
