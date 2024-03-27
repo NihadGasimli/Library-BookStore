@@ -55,7 +55,7 @@ onValue(ref(db, `/addedBooks`), response => {
         document.querySelector(".booksTable").innerHTML +=
             `<tr class="booksTableRow">
          <td>${idCounter + 1}</td>
-         <td class="booksTableDataName">${result[i].bookName}</td>
+         <td class="booksTableDataName"><img src="${result[i].bookImage}" class="imageInBooksTable"/> <ert>${result[i].bookName}</ert></td>
          <td class="booksTableDataDescription">${result[i].bookDescription}</td>
          <td class="booksTableDataType">${result[i].bookType}</td>
          <td class="booksTableDataAuthor">${result[i].authorName}</td>
@@ -339,11 +339,10 @@ function editingBook() {
 
             }, 1)
 
-            let bookName = booksTableRow.querySelector(".booksTableDataName").innerHTML;
+            let bookName = booksTableRow.querySelector(".booksTableDataName ert").innerHTML;
 
             get(ref(db, `/addedBooks`)).then(response => {
                 const result = response.val();
-
                 for (let i in result) {
                     if (result[i].bookName === bookName) {
                         localStorage.setItem("key", i);
