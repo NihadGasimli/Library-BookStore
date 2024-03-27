@@ -77,30 +77,31 @@ sendJoinUsToDatabase();
 const searchBtn = document.querySelector(".searchBtn");
 
 searchBtn.addEventListener("click", async function () {
-    document.querySelector(".rightSideSearchSection").style.opacity = "1";
-    document.querySelector(".wrapper-search").innerHTML = "";
-    let imageClass;
-    let bookName;
-    let authorName;
-    let description;
-    await get(ref(db, `/addedBooks`)).then(response => {
-        const result = response.val();
-        const inputSearch = document.querySelector(".searchBookInp");
-        for (let i in result) {
-            if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
-                document.querySelector(".bookNotFound").style.display = "none";
-                document.querySelector(".leftArrow").style.display = "block";
-                document.querySelector(".rightArrow").style.display = "block";
-                bookName = result[i].bookName;
-                authorName = result[i].authorName;
-                description = result[i].bookDescription;
-                if (Number(result[i].yearOfBook) > 2020) {
-                    imageClass = "span";
-                } else {
-                    imageClass = "newBook";
-                }
-                document.querySelector(".wrapper-search").innerHTML +=
-                    `<div class="swiper-slide slideDiv">
+    if (document.querySelector(".searchBookInp").value.trim() !== "") {
+        document.querySelector(".rightSideSearchSection").style.opacity = "1";
+        document.querySelector(".wrapper-search").innerHTML = "";
+        let imageClass;
+        let bookName;
+        let authorName;
+        let description;
+        await get(ref(db, `/addedBooks`)).then(response => {
+            const result = response.val();
+            const inputSearch = document.querySelector(".searchBookInp");
+            for (let i in result) {
+                if (result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase())) {
+                    document.querySelector(".bookNotFound").style.display = "none";
+                    document.querySelector(".leftArrow").style.display = "block";
+                    document.querySelector(".rightArrow").style.display = "block";
+                    bookName = result[i].bookName;
+                    authorName = result[i].authorName;
+                    description = result[i].bookDescription;
+                    if (Number(result[i].yearOfBook) > 2020) {
+                        imageClass = "span";
+                    } else {
+                        imageClass = "newBook";
+                    }
+                    document.querySelector(".wrapper-search").innerHTML +=
+                        `<div class="swiper-slide slideDiv">
                 <div class="imageSwiperDiv">
                     <img src="${result[i].bookImage}" class="imageSwiper" />
                 </div>
@@ -110,14 +111,18 @@ searchBtn.addEventListener("click", async function () {
                 <p class="descriptionSwiper">${description}</p>
                     </div>
                 </div>`;
+                }
+                else if (!result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase()) && document.querySelector(".wrapper-search").innerHTML === "") {
+                    document.querySelector(".bookNotFound").style.display = "block";
+                    document.querySelector(".leftArrow").style.display = "none";
+                    document.querySelector(".rightArrow").style.display = "none";
+                }
             }
-            else if (!result[i].bookName.toLowerCase().includes(inputSearch.value.toLowerCase()) && document.querySelector(".wrapper-search").innerHTML === "") {
-                document.querySelector(".bookNotFound").style.display = "block";
-                document.querySelector(".leftArrow").style.display = "none";
-                document.querySelector(".rightArrow").style.display = "none";
-            }
-        }
 
-    })
-    document.querySelector(".searchBookInp").value = "";
+        })
+        document.querySelector(".searchBookInp").value = "";
+    }
+    else{
+        alert("Please enter book name!")
+    }
 })
