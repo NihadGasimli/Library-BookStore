@@ -819,6 +819,10 @@ body {
         margin: 0;
     }
 
+    .wrapper-besteller {
+        justify-content: space-between;
+    }
+
     .bookNameSwiper,
     .authorNameSwiper,
     .imageSwiper {
